@@ -567,6 +567,4 @@ html,body{width:100%;height:100%;overflow:hidden;background:#12141C;display:flex
             <div style="font-size:10px;color:rgba(255,255,255,0.6)">Trésor · Fragrância sofisticada</div>
             <div style="margin-top:auto"><div style="font-size:9px;color:rgba(255,255,255,0.4);text-decoration:line-through">R$ 349,90</div><div class="syne" style="font-weight:800;font-size:14px;color:#fff">R$ 189,90</div></div>
           </a>
-          <a href="https://shopee.com.br" target="_blank" style="flex-shrink:0;width:140px;background:var(--dk3);border:1.5px solid rgba(0,214,143,0.25);border-radius:16px;padding:14px;text-decoration:none;scroll-snap-align:start;display:flex;flex-direction:column;gap:8px">
-            <div style="width:100%;height:100px;border-radius:10px;background:rgba(255,255,255,0.05);display:flex;align-items:center;justify-content:center;font-size:36px">🐾</div>
-            <div style="display:inline-block;backgr
+          <a href="https://shopee.com.br" target="_blank" backgr
