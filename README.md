@@ -2192,15 +2192,19 @@ const firebaseConfig = {
 // ─── INICIALIZAÇÃO ───
 let _fbApp, _fbAuth, _fbDb;
 try {
-  _fbApp  = initializeApp(firebaseConfig);
-  _fbAuth = getAuth(_fbApp);
-  _fbDb   = getFirestore(_fbApp);
-  window._fbReady = true;
-  // Notificar scripts regulares que Firebase está pronto
-  document.dispatchEvent(new Event('fbReady'));
+    // Verifica se já existe uma instância iniciada antes de criar uma nova
+    if (!getApps().length) {
+        _fbApp = initializeApp(firebaseConfig);
+    } else {
+        _fbApp = getApps()[0];
+    }
+    _fbAuth = getAuth(_fbApp);
+    _fbDb = getFirestore(_fbApp);
+    window._fbReady = true;
+    document.dispatchEvent(new Event('fbReady'));
 } catch(e) {
-  console.warn('[FrilaOne] Firebase init falhou — modo offline ativo', e);
-  window._fbReady = false;
+    console.warn('[FrilaOne] Firebase init falhou - modo offline ativo', e);
+    window._fbReady = false;
 }
 
 // ─── EXPOR FUNÇÕES GLOBAIS DO FIREBASE ───
@@ -8640,7 +8644,7 @@ function _fecharNotificacoes(){
 // Substitua os valores abaixo pela sua firebaseConfig real
 // Console: console.firebase.google.com → Project Settings → Your apps
 // ═══════════════════════════════════════════════════════════════
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
+import { initializeApp, getApps } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, sendPasswordResetEmail, GoogleAuthProvider, signInWithPopup } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js';
 import { getFirestore, doc, setDoc, getDoc, updateDoc, collection, addDoc, serverTimestamp, increment } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
 
@@ -13513,11 +13517,4 @@ function _fecharPainelFrilas(){
   // Retomar timer se estava online antes de fechar o app
   document.addEventListener('DOMContentLoaded', function(){
     var onSince = parseInt(localStorage.getItem('frilaone_online_since')||'0');
-    if(onSince && (Date.now()-onSince) < ONLINE_MAX){
-      _iniciarTimerOnline();
-    }
-  });
-})();
-</script>
-</body>
-</html>
+    if
