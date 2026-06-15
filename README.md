@@ -2183,7 +2183,7 @@ const firebaseConfig = {
   apiKey: "AIzaSyA87hoij-A4YkjhHmKbsIUIpbW3E9T1KT0",
   authDomain: "frilaone-e6247.firebaseapp.com",
   projectId: "frilaone-e6247",
-  storageBucket: "frilaone-e6247.firebasestorage.app",
+  // storageBucket: "frilaone-e6247.firebasestorage.app",
   messagingSenderId: "695357936349",
   appId: "1:695357936349:web:6d61c1e9f69479e50f8134",
   measurementId: "G-THYVMTRPLB"
