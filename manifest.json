@@ -1,4 +1,4 @@
-{
+  {
   "name": "FrilaOne",
   "short_name": "FrilaOne",
   "description": "Tudo o que você precisa em um só lugar",
@@ -9,12 +9,12 @@
   "orientation": "portrait",
   "icons": [
     {
-      "src": "/%C3%ADcone-192-1.png",
+      "src": "/icon-192-1.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/%C3%ADcone-512-1.png",
+      "src": "/icon-512-1.png",
       "sizes": "512x512",
       "type": "image/png"
     }
