@@ -2667,6 +2667,8 @@ if(_fbAuth) {
       localStorage.setItem('frilaone_sessao','ativa');
       localStorage.setItem('frilaone_sessao_ts', Date.now().toString());
       localStorage.setItem('frilaone_uid', user.uid);
+      // Iniciar listener de disponíveis AGORA que temos o uid confirmado
+      setTimeout(function(){ try{ _carregarDisponiveis(); }catch(e){} }, 500);
     } else {
       window._fbUID = null;
       window._fbEmail = null;
