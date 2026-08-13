@@ -3239,15 +3239,37 @@ function doLogin(){
 
 function doLogout(){
   try{
+    // Remover da coleção disponiveis ao sair
+    var currentUser = firebase.auth().currentUser;
+    if(currentUser){
+      firebase.firestore().collection('disponiveis').doc(currentUser.uid).delete().catch(function(){});
+    }
     if(window._fbReady&&window._fb) window._fb.sair().catch(function(){});
-    localStorage.removeItem('frilaone_sessao');
-    localStorage.removeItem('frilaone_sessao_ts');
+    // Limpar TODOS os dados do usuário do localStorage
+    var keysToKeep = []; // não manter nada pessoal
+    var keysToRemove = [
+      'frilaone_sessao','frilaone_sessao_ts','frilaone_uid',
+      'frilaone_nome','frilaone_foto','frilaone_bio',
+      'frilaone_tipo','frilaone_tipo_label','frilaone_tipo_icon',
+      'frilaone_trial','frilaone_disponivel','frilaone_xp',
+      'frilaone_score','frilaone_nivel','frilaone_meu_negocio',
+      'frilaone_codigo_mn_ativo','frilaone_meu_codigo_convite',
+      'frilaone_visitado','frilaone_criado_em',
+      'master_online','trab_online','frilaone_shares'
+    ];
+    keysToRemove.forEach(function(k){ localStorage.removeItem(k); });
+    // Cancelar listener de disponíveis
+    if(window._disponivelListener){ try{window._disponivelListener();}catch(e){} window._disponivelListener=null; }
   }catch(e){}
   var sm=document.getElementById('s-main');
   var sa=document.getElementById('s-auth');
   if(sm){sm.classList.remove('on');sm.style.cssText='';}
   if(sa){sa.classList.add('on');sa.style.display='flex';}
   authed=false;
+  disponivel=false;
+  nomeUsuario='';
+  bioUsuario='';
+  window._fbUID=null;
   showToast('Até logo! 👋');
 }
 
@@ -5082,29 +5104,36 @@ function toggleDisponivel(){
   }
   localStorage.setItem('frilaone_disponivel', disponivel ? '1' : '0');
 
-  // Usar firebase.firestore() diretamente — mais confiável
+  // Usar firebase.auth().currentUser.uid diretamente
   try {
-    var uid = window._fbUID;
-    if(!uid) return;
+    var currentUser = firebase.auth().currentUser;
+    if(!currentUser) { console.warn('[Disponivel] Usuário não autenticado'); return; }
+    var uid = currentUser.uid;
     var db = firebase.firestore();
     var docRef = db.collection('disponiveis').doc(uid);
     if(disponivel){
-      var nome = localStorage.getItem('frilaone_nome') || 'Usuário';
-      var foto = localStorage.getItem('frilaone_foto') || '';
+      var nome = localStorage.getItem('frilaone_nome') || currentUser.displayName || 'Usuário';
+      var foto = localStorage.getItem('frilaone_foto') || currentUser.photoURL || '';
       var bio  = localStorage.getItem('frilaone_bio') || localStorage.getItem('frilaone_tipo_label') || 'Prestador de Serviço';
-      // set com uid como ID do documento
       docRef.set({
         uid:  uid,
         nome: nome,
         foto: foto,
         bio:  bio,
-        ts:   Date.now()
+        ts:   firebase.firestore.FieldValue.serverTimestamp()
+      }).then(function(){
+        console.log('[Disponivel] Salvo com sucesso:', uid);
+      }).catch(function(e){
+        console.error('[Disponivel] Erro ao salvar:', e);
       });
     } else {
-      // delete remove o documento completamente
-      docRef.delete();
+      docRef.delete().then(function(){
+        console.log('[Disponivel] Removido com sucesso:', uid);
+      }).catch(function(e){
+        console.error('[Disponivel] Erro ao deletar:', e);
+      });
     }
-  } catch(e){ console.warn('[Disponivel] Firestore erro:', e); }
+  } catch(e){ console.error('[Disponivel] Erro geral:', e); }
 }
 
 // onSnapshot na coleção inteira — tempo real para todos os usuários
@@ -5118,18 +5147,19 @@ function _carregarDisponiveis(){
 
   try {
     var db = firebase.firestore();
-    // Escuta TODA a coleção disponiveis em tempo real
+    var currentUser = firebase.auth().currentUser;
+    var myUid = currentUser ? currentUser.uid : null;
     _disponivelListener = db.collection('disponiveis')
       .onSnapshot(function(snap){
         var cards = [];
         snap.forEach(function(doc){
           var d = doc.data();
-          var docUid = doc.id; // uid é o ID do documento
+          var docUid = doc.id;
           var primeiro = (d.nome || 'Usuário').split(' ')[0];
           var avatar = d.foto
             ? '<img src="'+d.foto+'" style="width:32px;height:32px;border-radius:50%;object-fit:cover;flex-shrink:0"/>'
             : '<div style="width:32px;height:32px;border-radius:50%;background:var(--pri);display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:13px;flex-shrink:0">'+primeiro.charAt(0).toUpperCase()+'</div>';
-          var isEu = (docUid === window._fbUID);
+          var isEu = (docUid === myUid);
           var fn = isEu
             ? '_abrirMeuStatus()'
             : "_chatInterno('"+primeiro.replace(/'/g,'')+"','"+(d.bio||'Prestador').replace(/'/g,'')+"','👤','var(--gr)')";
@@ -5145,8 +5175,9 @@ function _carregarDisponiveis(){
         lista.innerHTML = cards.length > 0
           ? cards.join('')
           : '<div style="font-size:11px;color:var(--mu);padding:4px 2px;font-style:italic">Ninguém disponível agora. Seja o primeiro!</div>';
+        console.log('[Disponivel] onSnapshot recebeu', snap.size, 'documentos');
       }, function(err){
-        console.warn('[Disponivel] onSnapshot erro:', err);
+        console.error('[Disponivel] onSnapshot erro:', err);
         _carregarDisponiveisLocal();
       });
   } catch(e){
