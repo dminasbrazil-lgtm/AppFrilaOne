@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FrilaOne - Teste Firebase</title>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+<style>
+  body{font-family:sans-serif;padding:20px;background:#0B1F3A;color:#fff}
+  .card{background:#1a2f4a;border-radius:12px;padding:16px;margin:10px 0}
+  .ok{color:#00D68F} .err{color:#FF4757} .warn{color:#FFB800}
+  button{background:#E8590C;color:#fff;border:none;padding:12px 20px;border-radius:10px;font-size:16px;cursor:pointer;width:100%;margin:5px 0}
+  #log{background:#000;border-radius:8px;padding:12px;font-size:12px;min-height:100px;white-space:pre-wrap}
+</style>
+</head>
+<body>
+<h2>🔥 Teste Firebase — FrilaOne</h2>
+
+<div class="card">
+  <b>Status Firebase:</b> <span id="status-fb">Inicializando...</span>
+</div>
+<div class="card">
+  <b>Status Auth:</b> <span id="status-auth">Aguardando...</span>
+</div>
+<div class="card">
+  <b>Documentos em /disponiveis:</b> <span id="status-disp">Aguardando...</span>
+</div>
+
+<button onclick="testarEscrever()">📝 Escrever em /disponiveis (meu uid)</button>
+<button onclick="testarLer()">📖 Ler /disponiveis (onSnapshot)</button>
+<button onclick="testarDeletar()">🗑️ Deletar meu doc de /disponiveis</button>
+
+<div id="log">Log:\n</div>
+
+<script>
+var firebaseConfig = {
+  apiKey: "AIzaSyA87hoij-A4YkjhHmKbsIUIpbW3E9T1KT0",
+  authDomain: "frilaone-e6247.firebaseapp.com",
+  projectId: "frilaone-e6247",
+  storageBucket: "frilaone-e6247.firebasestorage.app",
+  messagingSenderId: "695357936349",
+  appId: "1:695357936349:web:6d61c1e9f69479e50f8134"
+};
+
+function log(msg, tipo){
+  var el = document.getElementById('log');
+  var cor = tipo==='ok'?'#00D68F':tipo==='err'?'#FF4757':'#FFB800';
+  el.innerHTML += '<span style="color:'+cor+'">'+new Date().toLocaleTimeString()+' → '+msg+'</span>\n';
+}
+
+// Inicializar Firebase
+try {
+  firebase.initializeApp(firebaseConfig);
+  document.getElementById('status-fb').innerHTML = '<span class="ok">✅ SDK carregado</span>';
+  log('Firebase SDK iniciado', 'ok');
+} catch(e) {
+  document.getElementById('status-fb').innerHTML = '<span class="err">❌ '+e.message+'</span>';
+  log('ERRO SDK: '+e.message, 'err');
+}
+
+var db = firebase.firestore();
+var auth = firebase.auth();
+
+// Verificar auth
+auth.onAuthStateChanged(function(user){
+  if(user){
+    document.getElementById('status-auth').innerHTML = '<span class="ok">✅ Logado: '+user.email+' (uid: '+user.uid.slice(0,8)+'...)</span>';
+    log('Usuário autenticado: '+user.email, 'ok');
+    // Iniciar listener automático
+    testarLer();
+  } else {
+    document.getElementById('status-auth').innerHTML = '<span class="warn">⚠️ Não logado — faça login no app principal primeiro</span>';
+    log('Não autenticado', 'warn');
+  }
+});
+
+function testarEscrever(){
+  var user = auth.currentUser;
+  if(!user){ log('Precisa estar logado!', 'err'); return; }
+  log('Tentando escrever em disponiveis/'+user.uid.slice(0,8)+'...', 'warn');
+  db.collection('disponiveis').doc(user.uid).set({
+    uid: user.uid,
+    nome: user.displayName || user.email.split('@')[0],
+    foto: '',
+    bio: 'Teste',
+    ts: firebase.firestore.FieldValue.serverTimestamp()
+  }).then(function(){
+    log('✅ ESCRITA OK! Documento salvo em disponiveis/'+user.uid.slice(0,8), 'ok');
+  }).catch(function(e){
+    log('❌ ERRO escrita: '+e.code+' — '+e.message, 'err');
+  });
+}
+
+function testarLer(){
+  log('Iniciando onSnapshot em /disponiveis...', 'warn');
+  db.collection('disponiveis').onSnapshot(function(snap){
+    document.getElementById('status-disp').innerHTML = '<span class="ok">'+snap.size+' usuário(s) disponível(is)</span>';
+    log('onSnapshot recebeu '+snap.size+' documentos', 'ok');
+    snap.forEach(function(doc){
+      log('  → '+doc.id.slice(0,8)+': '+JSON.stringify(doc.data().nome), 'ok');
+    });
+  }, function(err){
+    document.getElementById('status-disp').innerHTML = '<span class="err">❌ '+err.message+'</span>';
+    log('❌ ERRO onSnapshot: '+err.code+' — '+err.message, 'err');
+  });
+}
+
+function testarDeletar(){
+  var user = auth.currentUser;
+  if(!user){ log('Precisa estar logado!', 'err'); return; }
+  db.collection('disponiveis').doc(user.uid).delete().then(function(){
+    log('✅ Documento deletado', 'ok');
+  }).catch(function(e){
+    log('❌ ERRO delete: '+e.message, 'err');
+  });
+}
+</script>
+</body>
+</html>
