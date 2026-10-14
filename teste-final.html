@@ -547,7 +547,7 @@ body > .vc{display:none!important}
     <button type="button" onclick="toggleTerms()" style="display:flex;align-items:center;gap:12px;width:100%;touch-action:manipulation;padding:14px;margin-bottom:14px;background:var(--dk3);border-radius:12px;border:1.5px solid var(--bd);cursor:pointer;text-align:left;box-sizing:border-box">
       <div id="terms-box" style="width:24px;height:24px;border-radius:7px;border:2px solid var(--bd);background:transparent;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.2s"></div>
       <p data-i18n="auth_terms" style="font-size:13px;color:var(--mu2);line-height:1.5;flex:1;margin:0">
-        Li e concordo com os <span style="color:var(--pri);font-weight:700">Termos de Uso</span> e a <span style="color:var(--pri);font-weight:700">Política de Privacidade</span> do FrilaOne.
+        Li e concordo com os <span data-doc="termos" style="color:var(--pri);font-weight:700;text-decoration:underline">Termos de Uso</span> e a <span data-doc="privacidade" style="color:var(--pri);font-weight:700;text-decoration:underline">Política de Privacidade</span> do FrilaOne.
       </p>
     </button>
   </div>
@@ -562,7 +562,6 @@ body > .vc{display:none!important}
   <!-- social -->
   <div style="display:flex;gap:10px;width:100%;margin-bottom:16px">
     <button id="btn-google" style="flex:1;padding:12px;background:var(--dk3);border:1px solid var(--bd);border-radius:12px;color:var(--tx);font-size:14px;cursor:pointer;text-align:center;font-family:Plus Jakarta Sans,sans-serif;font-weight:800;touch-action:manipulation">G — Google</button>
-    <button id="btn-facebook" style="flex:1;padding:12px;background:var(--dk3);border:1px solid var(--bd);border-radius:12px;color:var(--tx);font-size:14px;cursor:pointer;text-align:center;font-family:Plus Jakarta Sans,sans-serif;font-weight:800;touch-action:manipulation">f — Facebook</button>
   </div>
   <!-- aviso juridico rodape login -->
   <div style="width:100%;background:rgba(255,184,0,0.06);border:1px solid rgba(255,184,0,0.2);border-radius:12px;padding:12px 14px;margin-bottom:8px">
@@ -573,7 +572,7 @@ body > .vc{display:none!important}
         <p data-i18n="auth_aviso_corpo" style="font-size:9.5px;color:var(--mu);line-height:1.55;margin:0">
           O <strong style="color:rgba(255,255,255,0.5)">FrilaOne</strong> é uma <strong style="color:rgba(255,255,255,0.5)">plataforma de conexão</strong> entre prestadores de serviço, trabalhadores, empresas e clientes. Não somos parte em nenhum acordo, contrato ou negociação de valores realizada entre os usuários.<br><br>
           Acordos financeiros, combinações de preços, formas de pagamento e condições de serviço são de <strong style="color:rgba(255,255,255,0.5)">responsabilidade exclusiva das partes envolvidas</strong>. O FrilaOne não intermedia pagamentos, não garante a execução de serviços e não responde por inadimplemento, danos ou prejuízos decorrentes de negociações entre usuários.<br><br>
-          Ao utilizar esta plataforma, você declara ter lido e concordar com nossos <span onclick="showToast('Termos em breve!')" style="color:var(--bl);cursor:pointer;text-decoration:underline">Termos de Uso</span> e <span onclick="showToast('Política em breve!')" style="color:var(--bl);cursor:pointer;text-decoration:underline">Política de Privacidade</span>. Em caso de conflito entre usuários, recomendamos contato com os órgãos competentes (PROCON, Juizado Especial Cível).
+          Ao utilizar esta plataforma, você declara ter lido e concordar com nossos <span onclick="cfgTermos()" style="color:var(--bl);cursor:pointer;text-decoration:underline">Termos de Uso</span> e <span onclick="cfgPrivacidade()" style="color:var(--bl);cursor:pointer;text-decoration:underline">Política de Privacidade</span>. Em caso de conflito entre usuários, recomendamos contato com os órgãos competentes (PROCON, Juizado Especial Cível).
         </p>
       </div>
     </div>
@@ -725,7 +724,7 @@ body > .vc{display:none!important}
           </div>
           <div onclick="goTab('parceiros')" style="flex:1;background:rgba(232,89,12,0.08);border:1px solid rgba(232,89,12,0.2);border-radius:14px;padding:14px 8px;text-align:center;cursor:pointer">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E8590C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:block;margin:0 auto 6px"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
-            <div class="syne" style="font-size:12px;font-weight:800;color:var(--pri)">Prestar serviço</div>
+            <div class="syne" style="font-size:12px;font-weight:800;color:var(--pri)">Prestar Serviço</div>
             <div style="font-size:9px;color:var(--mu)">Divulgar meu trabalho</div>
           </div>
           <div onclick="goTab('profis');profisTab('solicitar')" style="flex:1;background:rgba(232,89,12,0.08);border:1px solid rgba(232,89,12,0.2);border-radius:14px;padding:14px 8px;text-align:center;cursor:pointer">
@@ -1708,7 +1707,7 @@ body > .vc{display:none!important}
         <div style="width:48px;height:48px;border-radius:14px;background:rgba(232,89,12,0.08);border:1px solid rgba(232,89,12,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--pri)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
         <div style="flex:1">
           <div class="syne" style="font-size:15px;font-weight:800;color:var(--tx);margin-bottom:3px">Vagas Brasil</div>
-          <div style="font-size:12px;color:var(--mu)">Busque vagas em qualquer cidade · <span style="color:var(--gr);font-weight:700">R$4,99/mês</span></div>
+          <div style="font-size:12px;color:var(--mu)">Busque vagas em qualquer cidade</div>
         </div>
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6B7A99" stroke-width="2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
       </div>
@@ -1745,7 +1744,7 @@ body > .vc{display:none!important}
               <div style="display:flex;align-items:center;gap:10px"><span style="color:var(--gr);flex-shrink:0">&#x2705;</span><span style="font-size:13px;color:var(--tx)">Divulgação semanal das suas vagas urgentes</span></div>
               <div style="display:flex;align-items:center;gap:10px"><span style="color:var(--gr);flex-shrink:0">&#x2705;</span><span style="font-size:13px;color:var(--tx)">Cancele quando quiser, sem multa</span></div>
             </div>
-            <button id="btn-assinar-empresa" onclick="planSemCupom('empresa')" style="width:100%;padding:14px;border:none;border-radius:12px;background:var(--pri);color:#fff;font-family:sans-serif;font-weight:800;font-size:18px;cursor:pointer">Assinar agora</button>
+            <button id="btn-assinar-empresa" onclick="planAssinar('empresa')" style="width:100%;padding:14px;border:none;border-radius:12px;background:var(--pri);color:#fff;font-family:sans-serif;font-weight:800;font-size:18px;cursor:pointer">Assinar agora</button>
           </div>
         </div>
 
@@ -1769,7 +1768,7 @@ body > .vc{display:none!important}
               <div style="display:flex;align-items:flex-start;gap:10px"><span style="color:var(--gr);flex-shrink:0">&#x2705;</span><span style="font-size:13px;color:var(--tx)">Fecha direto no chat, sem intermediário levando comissão</span></div>
               <div style="display:flex;align-items:flex-start;gap:10px"><span style="color:var(--gr);flex-shrink:0">&#x2705;</span><span style="font-size:13px;color:var(--tx)">Cancele quando quiser, sem multa</span></div>
             </div>
-            <button id="btn-assinar-prestador" onclick="planSemCupom('prestador')" style="width:100%;padding:14px;border:none;border-radius:12px;background:var(--pri);color:#fff;font-family:sans-serif;font-weight:800;font-size:18px;cursor:pointer">Assinar agora</button>
+            <button id="btn-assinar-prestador" onclick="planAssinar('prestador')" style="width:100%;padding:14px;border:none;border-radius:12px;background:var(--pri);color:#fff;font-family:sans-serif;font-weight:800;font-size:18px;cursor:pointer">Assinar agora</button>
           </div>
         </div>
       </div>
@@ -1826,7 +1825,7 @@ body > .vc{display:none!important}
           </div>
         </div>
         <div id="plan-preco-master" style="display:none;margin-bottom:12px"></div>
-        <button onclick="planSemCupom('master')" id="btn-assinar-master" style="width:100%;padding:14px;border:none;border-radius:12px;background:var(--pri);color:#fff;font-family:sans-serif;font-weight:800;font-size:18px;cursor:pointer;display:none">Assinar agora</button>
+        <button onclick="planAssinar('master')" id="btn-assinar-master" style="width:100%;padding:14px;border:none;border-radius:12px;background:var(--pri);color:#fff;font-family:sans-serif;font-weight:800;font-size:18px;cursor:pointer;display:none">Assinar agora</button>
       </div>
 
       <!-- MASTER — Todas as áreas de acesso -->
@@ -1850,7 +1849,7 @@ body > .vc{display:none!important}
         </div>
         <div style="font-size:12px;color:var(--mu2);margin-bottom:16px;line-height:1.5">Não inclui a <strong>Minha Loja</strong> (vitrine de loja) — essa é uma assinatura separada, pensada só pra quem tem produtos ou serviços com preço fixo pra vender.</div>
         <div id="plan-preco-completo" style="display:none;margin-bottom:12px"></div>
-        <button onclick="planSemCupom('completo')" id="btn-assinar-completo" style="width:100%;padding:14px;border:none;border-radius:12px;background:var(--pri);color:#fff;font-family:sans-serif;font-weight:800;font-size:18px;cursor:pointer">Assinar agora</button>
+        <button onclick="planAssinar('completo')" id="btn-assinar-completo" style="width:100%;padding:14px;border:none;border-radius:12px;background:var(--pri);color:#fff;font-family:sans-serif;font-weight:800;font-size:18px;cursor:pointer">Assinar agora</button>
       </div>
 
       <!-- GOLDEN — somente uma área -->
@@ -1902,7 +1901,7 @@ body > .vc{display:none!important}
             </div>
             <div>
               <div class="syne" style="font-size:15px;font-weight:800;color:var(--tx)">Pulsar <span style="color:var(--pri)">Pro</span></div>
-              <div style="font-size:11px;color:var(--mu)">Por mérito · ou assine <strong style="color:var(--pri)">R$24,90/mês</strong></div>
+              <div style="font-size:11px;color:var(--mu)">Reconhecimento por mérito</div>
             </div>
           </div>
         </div>
@@ -1911,7 +1910,7 @@ body > .vc{display:none!important}
         <div style="background:linear-gradient(135deg,rgba(232,89,12,0.1),rgba(255,184,0,0.06));border:1.5px solid rgba(232,89,12,0.3);border-radius:16px;padding:18px;margin-bottom:16px;text-align:center">
           <div style="font-size:21px;margin-bottom:6px">&#x2B50;</div>
           <div class="syne" style="font-size:15px;font-weight:800;color:var(--tx);margin-bottom:4px">Nível Pulsar Pro</div>
-          <div style="font-size:12px;color:var(--mu)">Alcançado pelas empresas mais ativas.<br>Ou assine diretamente por <strong style="color:var(--pri)">R$24,90/mês</strong>.</div>
+          <div style="font-size:12px;color:var(--mu)">Alcançado pelas empresas mais ativas.</div>
         </div>
 
         <!-- Como conquistar -->
@@ -1948,17 +1947,6 @@ body > .vc{display:none!important}
           <div style="font-size:12px;color:var(--mu);line-height:1.6">Use o FrilaOne, poste vagas e contrate.<br>Quando atingir os critérios, é promovido automaticamente! &#x1F680;</div>
         </div>
 
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
-          <div style="flex:1;height:1px;background:var(--bd)"></div>
-          <span style="font-size:11px;color:var(--mu)">ou acesse agora</span>
-          <div style="flex:1;height:1px;background:var(--bd)"></div>
-        </div>
-
-        <a href="https://wa.me/5531982299024?text=Quero+o+Pulsar+Pro+R%2424%2C90" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:14px;background:linear-gradient(135deg,var(--pri),var(--priL));border:none;border-radius:14px;color:#fff;font-family:sans-serif;font-weight:800;font-size:18px;text-decoration:none;margin-bottom:8px">
-          <span style="font-family:sans-serif;font-weight:800;font-size:18px;line-height:1">P</span>
-          Assinar Pulsar Pro — R$24,90/mês
-        </a>
-        <div style="font-size:11px;color:var(--mu);text-align:center">Cancele quando quiser, sem multa</div>
       </div>
 
       <!-- MEU NEGÓCIO / VITRINE -->
@@ -2007,28 +1995,12 @@ body > .vc{display:none!important}
           </div>
           <div style="display:flex;align-items:flex-start;gap:12px;background:var(--dk3);border:1px solid var(--bd);border-radius:12px;padding:12px 14px">
             <div style="width:28px;height:28px;border-radius:8px;background:rgba(255,184,0,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--yl)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18.178 8c5.096 0 5.096 8 0 8-5.095 0-7.133-8-12.739-8-4.585 0-4.585 8 0 8 5.606 0 7.644-8 12.74-8z"/></svg></div>
-            <div><div style="font-size:16px;font-weight:700;color:var(--tx)">Acesso ilimitado</div><div style="font-size:11px;color:var(--mu);margin-top:2px">Sem limite de buscas, sem limite de cidades, por apenas R$4,99/mês</div></div>
+            <div><div style="font-size:16px;font-weight:700;color:var(--tx)">Acesso ilimitado</div><div style="font-size:11px;color:var(--mu);margin-top:2px">Sem limite de buscas e sem limite de cidades</div></div>
           </div>
         </div>
         <div style="border:1.5px solid rgba(0,214,143,0.35);border-radius:16px;padding:18px;margin-bottom:10px;text-align:center">
-          <div class="syne" style="font-size:15px;font-weight:800;color:var(--gr)">R$4,99<span style="font-size:13px;color:var(--mu);font-weight:400">/mês</span></div>
-          <div style="font-size:11px;color:var(--mu);margin-top:4px;margin-bottom:16px">Cancele quando quiser</div>
-          <a href="https://mpago.la/2y5shyg" target="_blank" style="display:block;padding:14px;background:var(--gr);border-radius:12px;color:#000;font-family:sans-serif;font-weight:800;font-size:18px;text-decoration:none">Assinar agora · Mercado Pago</a>
-        </div>
-      </div>
-
-      <!-- CUPOM -->
-      <div id="plan-cupom" style="display:none">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px">
-          <button onclick="planVoltarCupom()" style="width:34px;height:34px;background:var(--dk3);border:1px solid var(--bd);border-radius:10px;color:var(--tx);font-size:18px;cursor:pointer;flex-shrink:0">←</button>
-          <div class="syne" style="font-size:15px;font-weight:800;color:var(--tx)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg> Ativar Cupom</div>
-        </div>
-        <div style="border:1px solid var(--bd);border-radius:16px;padding:20px">
-          <div style="font-size:21px;color:var(--mu2);margin-bottom:16px;line-height:1.6">Digite o cupom para ativar o <strong style="color:var(--tx)">Especial de Lançamento</strong>.</div>
-          <label class="lbl">Código do cupom</label>
-          <input id="inp-cupom-plan" class="inp" placeholder="Ex: EMP-1234" style="margin-bottom:12px;text-transform:uppercase"/>
-          <button onclick="ativarCupomPlan()" style="width:100%;padding:14px;border:none;border-radius:12px;background:var(--pri);color:#fff;font-family:sans-serif;font-weight:800;font-size:18px;cursor:pointer;margin-bottom:8px">Ativar cupom</button>
-          <button onclick="planVoltarCupom()" style="width:100%;padding:10px;border:none;background:transparent;color:var(--mu);font-size:12px;cursor:pointer">Cancelar</button>
+          <div class="syne" style="font-size:15px;font-weight:800;color:var(--gr)">Em breve</div>
+          <div style="font-size:11px;color:var(--mu);margin-top:4px">Este recurso ainda não está disponível para contratação.</div>
         </div>
       </div>
 
@@ -2408,27 +2380,30 @@ body > .vc{display:none!important}
 
       <label class="lbl">Tipo de atendimento</label>
       <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:10px">
-        <div id="parc-atend-fisico" onclick="_escolherAtendimentoParc('fisico')" style="display:flex;gap:12px;align-items:center;background:var(--dk3);border:1.5px solid var(--bd);border-radius:12px;padding:12px;cursor:pointer;touch-action:manipulation">
-          <div style="font-size:22px;line-height:1;flex-shrink:0">📍</div>
+        <div id="parc-atend-fisico" onclick="_escolherAtendimentoParc('fisico')" style="display:flex;gap:12px;align-items:flex-start;background:var(--dk3);border:1.5px solid var(--bd);border-radius:12px;padding:12px;cursor:pointer;touch-action:manipulation">
+          <div style="font-size:22px;line-height:1;flex-shrink:0;margin-top:1px">📍</div>
           <div style="flex:1;min-width:0;overflow-wrap:anywhere">
             <div class="syne" style="font-size:13px;font-weight:800;color:var(--tx);margin-bottom:3px">Físico</div>
             <div style="font-size:12px;color:var(--tx);line-height:1.4">Atendo presencialmente na minha cidade.</div>
+            <div style="font-size:11px;color:var(--mu2);line-height:1.4;margin-top:4px">Para serviços realizados pessoalmente, na sua região.</div>
           </div>
           <div id="parc-atend-chk-fisico" style="width:20px;height:20px;border-radius:50%;border:2px solid var(--mu);box-sizing:border-box;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:800;line-height:1"></div>
         </div>
-        <div id="parc-atend-digital" onclick="_escolherAtendimentoParc('digital')" style="display:flex;gap:12px;align-items:center;background:var(--dk3);border:1.5px solid var(--bd);border-radius:12px;padding:12px;cursor:pointer;touch-action:manipulation">
-          <div style="font-size:22px;line-height:1;flex-shrink:0">💻</div>
+        <div id="parc-atend-digital" onclick="_escolherAtendimentoParc('digital')" style="display:flex;gap:12px;align-items:flex-start;background:var(--dk3);border:1.5px solid var(--bd);border-radius:12px;padding:12px;cursor:pointer;touch-action:manipulation">
+          <div style="font-size:22px;line-height:1;flex-shrink:0;margin-top:1px">💻</div>
           <div style="flex:1;min-width:0;overflow-wrap:anywhere">
             <div class="syne" style="font-size:13px;font-weight:800;color:var(--tx);margin-bottom:3px">Digital</div>
             <div style="font-size:12px;color:var(--tx);line-height:1.4">Atendo pela internet e posso oferecer meu serviço para outras cidades.</div>
+            <div style="font-size:11px;color:var(--mu2);line-height:1.4;margin-top:4px">Para serviços realizados online, sem precisar estar no mesmo local do cliente.</div>
           </div>
           <div id="parc-atend-chk-digital" style="width:20px;height:20px;border-radius:50%;border:2px solid var(--mu);box-sizing:border-box;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:800;line-height:1"></div>
         </div>
-        <div id="parc-atend-hibrido" onclick="_escolherAtendimentoParc('hibrido')" style="display:flex;gap:12px;align-items:center;background:var(--dk3);border:1.5px solid var(--bd);border-radius:12px;padding:12px;cursor:pointer;touch-action:manipulation">
-          <div style="font-size:22px;line-height:1;flex-shrink:0">🔀</div>
+        <div id="parc-atend-hibrido" onclick="_escolherAtendimentoParc('hibrido')" style="display:flex;gap:12px;align-items:flex-start;background:var(--dk3);border:1.5px solid var(--bd);border-radius:12px;padding:12px;cursor:pointer;touch-action:manipulation">
+          <div style="font-size:22px;line-height:1;flex-shrink:0;margin-top:1px">🔀</div>
           <div style="flex:1;min-width:0;overflow-wrap:anywhere">
             <div class="syne" style="font-size:13px;font-weight:800;color:var(--tx);margin-bottom:3px">Híbrido</div>
             <div style="font-size:12px;color:var(--tx);line-height:1.4">Atendo presencialmente e também pela internet.</div>
+            <div style="font-size:11px;color:var(--mu2);line-height:1.4;margin-top:4px">Para quem oferece atendimento presencial e online.</div>
           </div>
           <div id="parc-atend-chk-hibrido" style="width:20px;height:20px;border-radius:50%;border:2px solid var(--mu);box-sizing:border-box;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:800;line-height:1"></div>
         </div>
@@ -2738,7 +2713,7 @@ function _fecharPainelFrilas(){
 
     <div style="margin-top:30px;padding-top:12px;border-top:1px solid var(--bd);text-align:center">
       <div style="font-size:10px;color:var(--mu);margin-bottom:3px"><b style="color:rgba(255,255,255,0.5)">FrilaOne</b> · Sete Lagoas, MG · v1.0.0 · © 2025</div>
-      <div style="font-size:10px;margin-bottom:8px"><span onclick="showToast('Termos em breve!')" style="color:var(--bl);cursor:pointer">Termos de Uso</span> · <span onclick="showToast('Politica em breve!')" style="color:var(--bl);cursor:pointer">Privacidade</span></div>
+      <div style="font-size:10px;margin-bottom:8px"><span onclick="cfgTermos()" style="color:var(--bl);cursor:pointer">Termos de Uso</span> · <span onclick="cfgPrivacidade()" style="color:var(--bl);cursor:pointer">Privacidade</span></div>
       <div style="font-size:9px;color:rgba(255,255,255,0.2);line-height:1.4;padding:0 8px">⚠️ Negociacoes e servicos entre usuarios sao de responsabilidade exclusiva das partes. O FrilaOne nao se responsabiliza por acordos entre usuarios.</div>
     </div>
     </div>
@@ -3031,15 +3006,6 @@ window._fb = {
       ...dados, uid: uid, criadoEm: firebase.firestore.FieldValue.serverTimestamp(), ativa: true
     });
   },
-  async marcarCupomUsado(uid, cupom) {
-    await _fbDb.collection('cupons_usados').doc(cupom).set({
-      uid: uid, ts: firebase.firestore.FieldValue.serverTimestamp()
-    });
-  },
-  async cupomJaUsado(cupom) {
-    var snap = await _fbDb.collection('cupons_usados').doc(cupom).get();
-    return snap.exists;
-  },
   async desbloquearConquista(uid, conquista) {
     var update = {};
     update['conquistas.' + conquista] = firebase.firestore.FieldValue.serverTimestamp();
@@ -3167,8 +3133,25 @@ if(_fbAuth) {
           if(perfil.area)   localStorage.setItem('frilaone_area_label', perfil.area);
           if(perfil.cidade) localStorage.setItem('frilaone_cidade', perfil.cidade);
           if(perfil.atendimento) localStorage.setItem('frilaone_atendimento', perfil.atendimento);
+          // CPF e contato de emergência: vêm do documento privado; o campo antigo em usuarios só é usado
+          // enquanto o documento privado não existe (e então é copiado para lá).
           if(perfil.cpf)    localStorage.setItem('frilaone_cpf', perfil.cpf);
           if(perfil.contatoEmergencia) localStorage.setItem('frilaone_contato_emergencia', perfil.contatoEmergencia);
+          try{
+            var dbPriv = _privDb();
+            if(dbPriv) dbPriv.collection('usuarios_privado').doc(user.uid).get().then(function(ps){
+              if(ps.exists){
+                var pd = ps.data() || {};
+                if(pd.cpf) localStorage.setItem('frilaone_cpf', pd.cpf);
+                if(pd.contatoEmergencia) localStorage.setItem('frilaone_contato_emergencia', pd.contatoEmergencia);
+                if(pd.emailContato) localStorage.setItem('frilaone_email_perfil', pd.emailContato);
+              } else if(perfil.cpf || perfil.contatoEmergencia || perfil.emailContato || perfil.email){
+                var cp0 = {}; if(perfil.cpf) cp0.cpf = perfil.cpf; if(perfil.contatoEmergencia) cp0.contatoEmergencia = perfil.contatoEmergencia;
+                if(perfil.emailContato) cp0.emailContato = perfil.emailContato; if(perfil.email) cp0.email = perfil.email;   // v18: e-mails também ficam só no documento privado
+                _privSalvarUsuario(user.uid, cp0);
+              }
+            }).catch(function(){});
+          }catch(ePriv){}
           if(perfil.cadParceiro){
             var cp = perfil.cadParceiro;
             if(cp.area)   localStorage.setItem('frilaone_parc_area', cp.area);
@@ -3179,7 +3162,10 @@ if(_fbAuth) {
           if(perfil.cadMaster) localStorage.setItem('frilaone_cad_master_temp', JSON.stringify(perfil.cadMaster));
           if(perfil.master_ativo) localStorage.setItem('frilaone_master_ativo', '1');
           if(perfil.master_modo) localStorage.setItem('frilaone_master_modo', perfil.master_modo);
-          if(perfil.trial_fim && perfil.trial_fim > Date.now()) {
+          if(_assinaturaConfigurada()) {
+            // Servidor ligado: o teste vem do servidor (os campos trial_* do perfil não valem mais)
+            try{ _acessoDoServidor(); }catch(eSrv0){}
+          } else if(perfil.trial_fim && perfil.trial_fim > Date.now()) {
             // Fonte da verdade é a conta (Firestore) — sobrescreve qualquer trial local deste navegador
             var trialData = {cod: perfil.trial_cod||'AUTO', inicio: perfil.trial_inicio||Date.now(), fim: perfil.trial_fim, ativo: true};
             localStorage.setItem('frilaone_trial', JSON.stringify(trialData));
@@ -3208,6 +3194,20 @@ if(_fbAuth) {
           if(negSnap.exists){
             localStorage.setItem('frilaone_meu_negocio', JSON.stringify(negSnap.data()));
             localStorage.setItem('frilaone_meu_negocio_id', 'neg_'+user.uid);
+            // v4.3: avisa o dono quando o administrador pediu ajustes ou recusou a loja (a conversa continua pelo chat existente)
+            try{
+              var stNeg = negSnap.data().aprovacaoStatus, mtNeg = negSnap.data().aprovacaoMotivo || '';
+              if(stNeg === 'pendencia') setTimeout(function(){ showToast('🏪 Sua loja precisa de ajustes'+(mtNeg?': '+mtNeg:'')+'. Corrija e salve para reenviar.','warn'); }, 2500);
+              else if(stNeg === 'recusada') setTimeout(function(){ showToast('🏪 Sua loja não foi aprovada'+(mtNeg?': '+mtNeg:'')+'.','warn'); }, 2500);
+            }catch(eAv){}
+            // CPF da loja: vem do documento privado (se ainda estiver no documento antigo, copia para o privado)
+            try{
+              db1.collection('negocios_privado').doc('neg_'+user.uid).get().then(function(ps){
+                var nl = {}; try{ nl = JSON.parse(localStorage.getItem('frilaone_meu_negocio')||'{}'); }catch(e5){}
+                if(ps.exists && ps.data().cpf){ nl.cpf = ps.data().cpf; localStorage.setItem('frilaone_meu_negocio', JSON.stringify(nl)); }
+                else if(negSnap.data().cpf){ _privSalvarLoja('neg_'+user.uid, user.uid, negSnap.data().cpf); }
+              }).catch(function(){});
+            }catch(e4){}
             try{ _tornarContaMeuNegocio(); }catch(e3){}
             try{ _initTogglesPorTipo(); }catch(e2){}
           }
@@ -3309,9 +3309,6 @@ document.addEventListener('DOMContentLoaded', function(){
   var gBtn = document.getElementById('btn-google');
   _addTouch(gBtn, loginGoogle);
 
-  // Facebook  
-  var fBtn = document.getElementById('btn-facebook');
-  _addTouch(fBtn, function(){ showToast('Facebook em breve! Use Google ou e-mail 😊'); });
 
   // Entrar / Cadastrar tabs
   var tabLogin = document.getElementById('auth-tab-login');
@@ -3358,6 +3355,17 @@ var bioUsuario = localStorage.getItem('frilaone_bio') || 'Profissional FrilaOne'
 var curTab='feed', radarInt=null, radarSec=30, promoIdx=0, adsIdx=0, authed=false, authMode='login', termsOk=false;
 
 var _termsDebounce=false;
+// Links dos Termos/Política dentro do checkbox: abrem o texto sem marcar/desmarcar o aceite e sem apagar campos.
+(function(){
+  var box=document.getElementById('reg-terms');
+  if(!box) return;
+  box.addEventListener('click',function(ev){
+    var a=ev.target&&ev.target.closest?ev.target.closest('[data-doc]'):null;
+    if(!a) return;
+    ev.stopPropagation(); ev.preventDefault();
+    try{ (a.getAttribute('data-doc')==='termos')?cfgTermos():cfgPrivacidade(); }catch(e){}
+  },true);
+})();
 function toggleTerms(){
   if(_termsDebounce) return;
   _termsDebounce=true;
@@ -3370,30 +3378,6 @@ function toggleTerms(){
 }
 
 // ── TOAST
-function setCiclo(c){
-  var mensal=document.getElementById('preco-emp-mensal');
-  var anual=document.getElementById('preco-emp-anual');
-  var econ=document.getElementById('economia-emp');
-  var btnM=document.getElementById('ciclo-mensal');
-  var btnA=document.getElementById('ciclo-anual');
-  var btnEmp=document.getElementById('btn-emp');
-  var btnAnualTab=document.getElementById('pt-anual');
-  var btnEmpTab=document.getElementById('pt-emp');
-  if(c==='anual'){
-    mensal.style.display='none'; anual.style.display='flex'; econ.style.display='block';
-    btnM.style.background='transparent'; btnM.style.color='var(--mu)';
-    btnA.style.background='var(--bl)'; btnA.style.color='#fff';
-    btnEmp.onclick=function(){openPag('Empresas & Negócios','R$ 308,56/ano','https://mpago.la/2KnHEaC');};
-    if(btnAnualTab){btnAnualTab.style.background='var(--bl)';btnAnualTab.style.color='#fff';}
-    if(btnEmpTab){btnEmpTab.style.background='transparent';btnEmpTab.style.color='var(--mu)';}
-  } else {
-    mensal.style.display='flex'; anual.style.display='none'; econ.style.display='none';
-    btnA.style.background='transparent'; btnA.style.color='var(--mu)';
-    btnM.style.background='var(--bl)'; btnM.style.color='#fff';
-    btnEmp.onclick=function(){openPag('Empresas & Negócios','R$ 29,90/mês','https://mpago.la/22Mdt2J');};
-    if(btnAnualTab){btnAnualTab.style.background='transparent';btnAnualTab.style.color='var(--mu)';}
-  }
-}
 function showToast(msg,type){
   var t=document.getElementById('toast');
   // Alguns avisos trazem códigos de emoji (ex.: &#x2705;) — converte em texto puro, sem interpretar HTML
@@ -3435,11 +3419,14 @@ function setAcc(t){
 }
 // ── FUNÇÃO CENTRAL DE TRIAL — salva localStorage + Firestore (fonte da verdade é a conta, não o navegador) ───────────────
 function _ativarTrial(cod, dias){
+  // Com o servidor ligado, quem cria e controla o teste é o servidor (uma única vez por conta, sem renovar).
+  // Nada de teste é calculado nem gravado por aqui: só pede o estado ao servidor.
+  if(_assinaturaConfigurada()){ try{ _acessoDoServidor(); }catch(eSrv){} return null; }
   dias = dias || 60;
   cod = cod || 'AUTO';
   var inicio = Date.now();
   var fim = inicio + (dias * 24 * 60 * 60 * 1000);
-  // Campanha de lançamento (trial automático — cupons manuais como CV/GP mantêm prazo próprio):
+  // Campanha de lançamento (trial automático):
   // • Quem entra até 30/11/2026 → grátis até 30/11/2026, todo mundo passa a pagar junto em 1º/12.
   // • Quem entra a partir de 1º/12/2026 → 7 dias grátis a partir do cadastro, paga a partir do 8º dia.
   if(cod === 'AUTO'){
@@ -3452,16 +3439,8 @@ function _ativarTrial(cod, dias){
   }
   var trialData = {cod: cod, inicio: inicio, fim: fim, ativo: true};
   localStorage.setItem('frilaone_trial', JSON.stringify(trialData));
-  // Sincronizar no Firestore para não perder se trocar de navegador/aparelho
-  var uid = window._fbUID;
-  if(uid && window._fbReady && window._fb){
-    window._fb.salvarPerfil(uid, {
-      trial_fim: fim,
-      trial_inicio: inicio,
-      trial_cod: cod,
-      trial_dias: dias
-    }).catch(function(e){ console.warn('[FrilaOne] Erro ao salvar trial', e); });
-  }
+  // v18: o teste NÃO é mais gravado na conta pelo aparelho (as regras bloqueiam trial_*). Sem o servidor ligado ele vale só
+  // neste aparelho, como informação na tela; quem concede o teste de verdade é a função statusAcesso (Modo Servidor).
   try{ _atualizarTrialBadge(); }catch(e){}
   return trialData;
 }
@@ -3544,101 +3523,6 @@ function _entrarNoApp(nomeDisplay) {
       }
     }catch(e){}
   }, 1000);
-}
-
-// ═══════════════════════════════════════════════════
-// SISTEMA DE CÓDIGOS DE CONVITE (Grupo Pró / Convite / 30 dias)
-// ═══════════════════════════════════════════════════
-// GP = 100 códigos → 90 dias grátis (válidos 1 jul – 29 set 2026)
-var _CODIGOS_GP = ["GP-XAJI0Y", "GP-6DPBHS", "GP-AHXTHV", "GP-3A3ZMF", "GP-8MDD4V", "GP-30T9NT", "GP-3W5UZB", "GP-IKCIDK", "GP-WNNHJ7", "GP-XVG0FN", "GP-9XUY41", "GP-IBLJH7", "GP-5LXO6Q", "GP-JIUJV6", "GP-OH9SDB", "GP-DW2PCN", "GP-9T84AZ", "GP-YTJXEP", "GP-Q85JSG", "GP-65KXVF", "GP-1T2TAL", "GP-A753LC", "GP-58DRC1", "GP-1ERTJ5", "GP-PHT0HL", "GP-9XPSEI", "GP-MVIHCW", "GP-I64CIY", "GP-HE7UR2", "GP-3GDPPQ", "GP-0Y9DOM", "GP-5IGQPK", "GP-I7P5TB", "GP-94874F", "GP-RHOCN9", "GP-J2QP89", "GP-UZFK8U", "GP-T0CVS4", "GP-F8CGVY", "GP-IE6IVW", "GP-PVS7HZ", "GP-IOYKL1", "GP-CQ99CH", "GP-J755NF", "GP-4ZW9XA", "GP-3KX7EE", "GP-DTJVZH", "GP-WJR64D", "GP-PJA1WJ", "GP-0TPAC5", "GP-6T4UFE", "GP-L6246H", "GP-ID25OW", "GP-F75935", "GP-A0L725", "GP-3J2D54", "GP-I3QK2I", "GP-AGL58K", "GP-XO9T7E", "GP-8G8JDP", "GP-0LVSNU", "GP-JZA7TZ", "GP-0YNCXL", "GP-L4ZKLO", "GP-OKEP7Y", "GP-6WKTAK", "GP-PUXQPH", "GP-R62GDS", "GP-WM31YI", "GP-HAIR4C", "GP-OWGZRI", "GP-XA11DP", "GP-G8SBI4", "GP-Q2Y9V8", "GP-6WZS3T", "GP-60RJIW", "GP-1SWJCK", "GP-JLTEIY", "GP-ZCOTOH", "GP-P6VZ41", "GP-NAM148", "GP-P0TVHH", "GP-PBMYOF", "GP-QEWAOU", "GP-AXEQBN", "GP-HL1N13", "GP-JCAT9M", "GP-X2X18H", "GP-AFEYUH", "GP-Z1GV0E", "GP-38DALY", "GP-8OZCYW", "GP-D14VE9", "GP-2MPNSM", "GP-43D8W3", "GP-ZP08J3", "GP-TRP0J4", "GP-3D5IQV", "GP-NB4GH2", "GP-M5ZJA8"];
-
-// CV = 5000 códigos → 30 dias grátis (compartilhamento em cadeia)
-var _CODIGOS_CV = (function(){
-  var arr = [];
-  for(var i=1;i<=5000;i++){
-    var n = String(i);
-    while(n.length<5) n='0'+n;
-    arr.push('CV-'+n);
-  }
-  return arr;
-})();
-
-// Datas de validade dos códigos
-var _GP_INICIO = new Date('2026-07-01T00:00:00').getTime();
-var _GP_FIM    = new Date('2026-09-29T23:59:59').getTime();
-
-function _validarCodigoCadastro(codigoBruto){
-  if(!codigoBruto) return null;
-  var codigo = codigoBruto.trim().toUpperCase();
-  if(!codigo) return null;
-  var usados = {};
-  try{ usados = JSON.parse(localStorage.getItem('frilaone_codigos_usados')||'{}'); }catch(e){}
-  if(usados[codigo]) return {erro:true, msg:'Esse código já foi usado.'};
-  var resultado = null;
-  var agora = Date.now();
-  if(_CODIGOS_GP.indexOf(codigo)!==-1){
-    if(agora < _GP_INICIO) return {erro:true, msg:'Esse código ainda não está ativo. Válido a partir de 1 de julho.'};
-    if(agora > _GP_FIM)    return {erro:true, msg:'Esse código expirou. Prazo encerrado em 29 de setembro.'};
-    resultado = {tipo:'GP', dias:90, msg:'🎉 Código Grupo Pró ativado! 90 dias grátis em todo o app.'};
-  } else if(_CODIGOS_CV.indexOf(codigo)!==-1){
-    resultado = {tipo:'CV', dias:30, msg:'🎁 Convite ativado! 30 dias grátis em todo o app.'};
-  } else if(codigo.indexOf('CV-')===0){
-    resultado = {tipo:'CV', dias:30, msg:'🎁 Convite ativado! 30 dias grátis em todo o app.'};
-  } else {
-    return {erro:true, msg:'Código inválido. Verifique e tente novamente.'};
-  }
-  usados[codigo]=true;
-  try{ localStorage.setItem('frilaone_codigos_usados', JSON.stringify(usados)); }catch(e){}
-  return resultado;
-}
-function _ativarCodigoCadastro(){
-  var inp = document.getElementById('inp-codigo-cad');
-  var msgEl = document.getElementById('codigo-cad-msg');
-  if(!inp || !inp.value.trim()) return;
-  var r = _validarCodigoCadastro(inp.value);
-  if(!r) return;
-  if(msgEl){
-    msgEl.style.display='block';
-    msgEl.style.color = r.erro ? 'var(--rd)' : 'var(--gr)';
-    msgEl.textContent = r.msg;
-  }
-  if(r.erro) return;
-  // Concede acesso liberado em todos os planos pelo número de dias do código
-  var fim = Date.now() + (r.dias*86400000);
-  ['parceiro','master','empresa','vit'].forEach(function(tipo){
-    localStorage.setItem('frilaone_assin_'+tipo, JSON.stringify({status:'trial', fim:fim, origem:r.tipo}));
-  });
-  localStorage.setItem('frilaone_codigo_ativo', JSON.stringify({tipo:r.tipo, dias:r.dias, fim:fim}));
-  showToast(r.msg);
-}
-
-// ═══════════════════════════════════════════════════
-// CÓDIGOS EXCLUSIVOS — MEU NEGÓCIO (30 vagas, renovação 6 em 6 meses)
-// ═══════════════════════════════════════════════════
-var _CODIGOS_MN = ["MN-DZR1YX", "MN-R2DHYL", "MN-URTP0L", "MN-ZJJEGE", "MN-T1GHR0", "MN-9SKDGI", "MN-GATJ9T", "MN-ZE5R5U", "MN-QPGB7R", "MN-3OCWBF", "MN-UK9E1V", "MN-2ISQP4", "MN-9KWV08", "MN-HHXFGC", "MN-AQVKIZ", "MN-ZQY72W", "MN-X7PTX6", "MN-3CFL0U", "MN-KEYZ7S", "MN-RCBPLJ", "MN-D84U89", "MN-YJB1QX", "MN-6GVWRD", "MN-MLY4LY", "MN-K83TQL", "MN-L8OS9X", "MN-TOGN1W", "MN-1HT7PZ", "MN-E9VIFT", "MN-TD96QE"];
-function _tentarAssinarMeuNegocio(){
-  var inp = document.getElementById('inp-codigo-mn');
-  var msgEl = document.getElementById('msg-codigo-mn');
-  var codigo = inp ? inp.value.trim().toUpperCase() : '';
-  if(!codigo){
-    if(msgEl){ msgEl.style.display='block'; msgEl.style.color='var(--rd)'; msgEl.textContent='Digite seu código de acesso pra continuar.'; }
-    return;
-  }
-  var usados = {};
-  try{ usados = JSON.parse(localStorage.getItem('frilaone_codigos_mn_usados')||'{}'); }catch(e){}
-  if(_CODIGOS_MN.indexOf(codigo)===-1){
-    if(msgEl){ msgEl.style.display='block'; msgEl.style.color='var(--rd)'; msgEl.textContent='Código inválido. Essa área é exclusiva para convidados.'; }
-    return;
-  }
-  if(usados[codigo]){
-    if(msgEl){ msgEl.style.display='block'; msgEl.style.color='var(--rd)'; msgEl.textContent='Esse código já foi usado por outra pessoa.'; }
-    return;
-  }
-  usados[codigo]=true;
-  try{ localStorage.setItem('frilaone_codigos_mn_usados', JSON.stringify(usados)); }catch(e){}
-  localStorage.setItem('frilaone_codigo_mn_ativo', codigo);
-  if(msgEl){ msgEl.style.display='block'; msgEl.style.color='var(--gr)'; msgEl.textContent='✅ Código válido! Abrindo cadastro do seu negócio...'; }
-  setTimeout(function(){ closeSheet(); _abrirCadastroNegocio(); }, 700);
 }
 
 function _abrirCadastroNegocio(){
@@ -3960,10 +3844,13 @@ function _tentarSincronizarNegocioPendente(tentativa){
     if(localStorage.getItem('frilaone_meu_negocio_sincronizado') === negId) return; // já foi, nada a fazer
     var db = window._fbDb || (typeof _fbDb !== 'undefined' ? _fbDb : null);
     if(!window._fbReady || !db){ _agendarRetentativaNegocio((tentativa||0)+1); return; }
-    db.collection('negocios').doc(negId).set(negLocal)
+    var dadosRetry = _negSemCpf(negLocal), stRetry = _statusLojaParaEnviar(negLocal.aprovacaoStatus || '');
+    if(stRetry) dadosRetry.aprovacaoStatus = stRetry;
+    db.collection('negocios').doc(negId).set(dadosRetry, { merge: true })
       .then(function(){
+        if(negLocal.cpf) _privSalvarLoja(negId, negLocal.uid || window._fbUID, negLocal.cpf);
         localStorage.setItem('frilaone_meu_negocio_sincronizado', negId);
-        showToast('🏪 Seu negócio foi publicado na vitrine!','ok');
+        showToast('🏪 Sua loja foi enviada para aprovação!','ok');
       })
       .catch(function(){ _agendarRetentativaNegocio((tentativa||0)+1); });
   }catch(e){}
@@ -4128,22 +4015,27 @@ function _salvarCadastroNegocio(dadosCnpj){
     ativo: true,
     criado: Date.now(),
     uid: uidAtualNeg,
-    cod: localStorage.getItem('frilaone_codigo_mn_ativo')||'',
     horarioFuncionamento: horarioFuncionamento
   };
   if(dadosCnpj){ Object.assign(negData, dadosCnpj); }
 
   // Salvar no localStorage imediatamente
   var meuId = uidAtualNeg ? ('neg_' + uidAtualNeg) : ('neg_' + Date.now());
+  var statusLojaAtual = ''; try{ statusLojaAtual = (JSON.parse(localStorage.getItem('frilaone_meu_negocio')||'null')||{}).aprovacaoStatus || ''; }catch(eSt){}
+  var statusLojaEnviar = _statusLojaParaEnviar(statusLojaAtual);
+  if(statusLojaAtual) negData.aprovacaoStatus = statusLojaAtual;   // só na cópia local (o envio ao banco remove os campos de servidor): evita mandar 'pendente' por cima de loja aprovada na próxima edição
   localStorage.setItem('frilaone_meu_negocio', JSON.stringify(negData));
   localStorage.setItem('frilaone_meu_negocio_id', meuId);
 
   // Salvar no Firestore
   if(window._fbReady && (window._fbDb || (typeof _fbDb !== 'undefined' && _fbDb))){
-    (window._fbDb || _fbDb).collection('negocios').doc(meuId).set(negData)
+    var dadosEnviar = _negSemCpf(negData); if(statusLojaEnviar) dadosEnviar.aprovacaoStatus = statusLojaEnviar;
+    (window._fbDb || _fbDb).collection('negocios').doc(meuId).set(dadosEnviar, { merge: true })
       .then(function(){
+        if(negData.cpf) _privSalvarLoja(meuId, uidAtualNeg, negData.cpf);
         localStorage.setItem('frilaone_meu_negocio_sincronizado', meuId);
-        showToast('🏪 Negócio publicado! Já aparece na vitrine.','ok');
+        if(statusLojaEnviar){ var nl0 = {}; try{ nl0 = JSON.parse(localStorage.getItem('frilaone_meu_negocio')||'{}'); }catch(eN){} nl0.aprovacaoStatus = 'pendente'; localStorage.setItem('frilaone_meu_negocio', JSON.stringify(nl0)); }
+        showToast(statusLojaAtual === 'aprovada' ? '🏪 Loja atualizada!' : '🏪 Loja enviada para aprovação. Quando for aprovada, aparece na vitrine.','ok');
         // Contar essa vaga no total das 30 do Meu Negócio (só na primeira vez que esse uid publica)
         if(!localStorage.getItem('frilaone_mn_contado')){
           var db2 = window._fbDb || (typeof _fbDb !== 'undefined' ? _fbDb : firebase.firestore());
@@ -4312,11 +4204,13 @@ function doLogin(){
       window._fb.cadastrar(email, senha).then(function(user){
         clearTimeout(_timeoutFirebase);
         window._fb.salvarPerfil(user.uid,{
-          nome: nome, email: email, tipo:'', tipo_label:'', tipo_icon:'👤',
+          nome: nome, tipo:'', tipo_label:'', tipo_icon:'👤',
           xp:0, xp_total:0, nivel:'Iniciante', plano:'free', pontos:0,
           criadoEm: Date.now(), ultimoLogin: Date.now()
         }).catch(function(){});
+        try{ _privSalvarUsuario(user.uid, { email: email }); }catch(ePrivE){}   // v18: o e-mail de login não fica no perfil público
         _adicionarXP(10,'Cadastro realizado');
+        try{ _registrarAceite('cadastro_email', user.uid); }catch(exAc){}
         _entrar(user);
       }).catch(function(err){
         clearTimeout(_timeoutFirebase);
@@ -4360,6 +4254,7 @@ function doLogout(){
     // Remover da coleção disponiveis ao sair
     var currentUser = firebase.auth().currentUser;
     try{ _pararHeartbeatPresenca(); }catch(e){}
+    try{ _estPararHeartbeat(); if(_estOnline && currentUser){ firebase.firestore().collection('estagiarios').doc(currentUser.uid).set({ online: false }, { merge: true }).catch(function(){}); } }catch(e){}
     try{ _pararAssinaturaServidor(); localStorage.removeItem('frilaone_lembrete_cartao'); localStorage.removeItem('frilaone_aguardando_cartao'); }catch(e){}
     if(currentUser){
       firebase.firestore().collection('disponiveis').doc(currentUser.uid).delete().catch(function(){});
@@ -4448,6 +4343,86 @@ function doLogout(){
   showToast('Até logo! 👋');
 }
 
+// ── ACEITE DOS TERMOS / CIÊNCIA DA POLÍTICA (etapa LGPD) ─────────────────────────
+// Versões dos textos exibidos em cfgTermos()/cfgPrivacidade(). O servidor (registrarAceite) confere se batem com as vigentes.
+var _TERMOS_VERSAO = '1.1', _PRIVACIDADE_VERSAO = '1.1';
+// Pede ao servidor para gravar o aceite (data/hora e versões são do servidor). Se falhar (sem rede, função ainda não
+// publicada), guarda um lembrete e tenta de novo no próximo acesso — nunca trava o uso do app.
+function _registrarAceite(acao, uid){
+  try{ localStorage.setItem('frilaone_aceite_reg_pend', JSON.stringify({uid:uid, acao:acao})); }catch(e){}
+  return _fnPost('registrarAceite', {acao:acao, termosVersao:_TERMOS_VERSAO, privacidadeVersao:_PRIVACIDADE_VERSAO}).then(function(){
+    try{ localStorage.removeItem('frilaone_aceite_reg_pend'); }catch(e){}
+  }).catch(function(err){
+    // versão desatualizada ou ação inválida não adianta repetir
+    if(err && (err.codigo==='versao_desatualizada' || err.codigo==='acao_invalida')){ try{ localStorage.removeItem('frilaone_aceite_reg_pend'); }catch(e){} }
+  });
+}
+function _aceitePosLogin(){
+  var u = null; try{ u = firebase.auth().currentUser; }catch(e){}
+  if(!u) return;
+  var gate = null, pend = null;
+  try{ gate = localStorage.getItem('frilaone_aceite_gate'); pend = JSON.parse(localStorage.getItem('frilaone_aceite_reg_pend')||'null'); }catch(e){}
+  if(gate && gate === u.uid){ _mostrarAceiteGoogle(u); return; }   // conta nova do Google que ainda não aceitou (ex.: recarregou a página)
+  if(pend && pend.uid === u.uid){ _registrarAceite(pend.acao, u.uid); }
+}
+function _mostrarAceiteGoogle(user){
+  if(document.getElementById('aceite-google-bg')) return;
+  var bg = document.createElement('div');
+  bg.id = 'aceite-google-bg';
+  bg.style.cssText = 'position:fixed;inset:0;z-index:1050;background:var(--dk,#0b0b12);display:flex;align-items:center;justify-content:center;padding:20px;box-sizing:border-box';
+  bg.innerHTML =
+    '<div style="width:100%;max-width:420px;background:var(--dk3,#17171f);border:1.5px solid var(--bd,#2a2a38);border-radius:16px;padding:22px;box-sizing:border-box;color:var(--tx,#fff)">'
+    + '<div style="font-size:18px;font-weight:800;margin-bottom:8px">Falta só um passo</div>'
+    + '<p style="font-size:13px;line-height:1.5;color:var(--mu2,#aaa);margin:0 0 14px">Para criar sua conta com o Google, leia e aceite os Termos de Uso e confirme que está ciente da Política de Privacidade.</p>'
+    + '<button type="button" id="aceite-google-chk" style="display:flex;align-items:center;gap:12px;width:100%;padding:14px;margin-bottom:14px;background:transparent;border-radius:12px;border:1.5px solid var(--bd,#2a2a38);cursor:pointer;text-align:left;box-sizing:border-box;touch-action:manipulation">'
+    + '<div id="aceite-google-box" style="width:24px;height:24px;border-radius:7px;border:2px solid var(--bd,#2a2a38);display:flex;align-items:center;justify-content:center;flex-shrink:0"></div>'
+    + '<p style="font-size:13px;color:var(--mu2,#aaa);line-height:1.5;flex:1;margin:0">Li e concordo com os <span data-doc="termos" style="color:var(--pri,#7c5cff);font-weight:700;text-decoration:underline">Termos de Uso</span> e estou ciente da <span data-doc="privacidade" style="color:var(--pri,#7c5cff);font-weight:700;text-decoration:underline">Política de Privacidade</span> do FrilaOne.</p>'
+    + '</button>'
+    + '<button type="button" id="aceite-google-ok" disabled style="width:100%;padding:14px;border:0;border-radius:12px;background:var(--pri,#7c5cff);color:#fff;font-weight:800;font-size:15px;opacity:.45;cursor:not-allowed;margin-bottom:10px">Aceitar e continuar</button>'
+    + '<button type="button" id="aceite-google-no" style="width:100%;padding:10px;border:0;background:transparent;color:var(--mu2,#aaa);font-size:12px;cursor:pointer;text-decoration:underline">Não aceito — cancelar cadastro</button>'
+    + '</div>';
+  document.body.appendChild(bg);
+  var marcado = false, chk = document.getElementById('aceite-google-chk'), box = document.getElementById('aceite-google-box'), ok = document.getElementById('aceite-google-ok');
+  bg.addEventListener('click', function(ev){   // links abrem o texto sem marcar a caixa
+    var a = ev.target && ev.target.closest ? ev.target.closest('[data-doc]') : null;
+    if(!a) return;
+    ev.stopPropagation(); ev.preventDefault();
+    try{ (a.getAttribute('data-doc')==='termos') ? cfgTermos() : cfgPrivacidade(); }catch(e){}
+  }, true);
+  chk.onclick = function(){
+    marcado = !marcado;
+    box.style.background = marcado ? 'var(--pri,#7c5cff)' : 'transparent';
+    box.innerHTML = marcado ? '<span style="color:#fff;font-size:12px;font-weight:700">✓</span>' : '';
+    ok.disabled = !marcado; ok.style.opacity = marcado ? '1' : '.45'; ok.style.cursor = marcado ? 'pointer' : 'not-allowed';
+  };
+  ok.onclick = function(){
+    if(!marcado) return;
+    try{ localStorage.removeItem('frilaone_aceite_gate'); }catch(e){}
+    try{ _registrarIndicacaoSeHouver(user.uid); }catch(e){}
+    _registrarAceite('cadastro_google', user.uid);
+    if(bg.parentNode) bg.parentNode.removeChild(bg);
+    var nm = ''; try{ nm = localStorage.getItem('frilaone_nome') || user.displayName || ''; }catch(e){}
+    _entrarNoApp(nm);
+  };
+  document.getElementById('aceite-google-no').onclick = function(){
+    // Quem recusa não fica com conta criada sem aceite: cancela a conta do login (o servidor apaga o perfil recém-criado
+    // — função limparPerfilDoLoginExcluido) e volta ao início. Se não conseguir cancelar (sem rede, login antigo demais),
+    // a tela CONTINUA aberta e a marca de pendência é mantida: a pessoa tenta de novo ou aceita; nunca fica dentro do app sem aceitar.
+    var no = document.getElementById('aceite-google-no');
+    var fim = function(){ try{ localStorage.removeItem('frilaone_aceite_gate'); }catch(e){} try{ location.reload(); }catch(e){} };
+    var falhou = function(){ if(no) no.disabled = false; showToast('Não foi possível cancelar agora. Tente de novo ou aceite os Termos para continuar.','err'); };
+    var cu = null; try{ cu = firebase.auth().currentUser; }catch(e){}
+    if(!cu || cu.uid !== user.uid){ fim(); return; }
+    if(no) no.disabled = true;
+    cu.delete().then(fim).catch(function(err){
+      if(err && err.code === 'auth/requires-recent-login'){
+        // login antigo: confirma com o Google de novo e tenta mais uma vez
+        cu.reauthenticateWithPopup(new firebase.auth.GoogleAuthProvider()).then(function(){ return cu.delete(); }).then(fim).catch(falhou);
+      } else { falhou(); }
+    });
+  };
+}
+
 function loginGoogle(){
   if(!window._fbReady || !window._fb){
     showToast('Firebase não configurado','err');
@@ -4466,21 +4441,27 @@ function loginGoogle(){
     // realmente nova, com valores fixos (nunca lidos do localStorage).
     var dadosGoogle = {
       nome: nomeUsuario,
-      email: user.email,
       foto: user.photoURL || '',
       ultimoLogin: Date.now()
     };
+    try{ _privSalvarUsuario(user.uid, { email: user.email }); }catch(ePrivG){}   // v18: o e-mail de login não fica no perfil público
     if(user._frilaIsNewUser){
       // Sem isso, conta feita via Google nunca aparecia em "Destaque" — a lista é ordenada
       // por criadoEm, e um cadastro sem esse campo é ignorado pelo Firestore no orderBy.
       dadosGoogle.criadoEm = firebase.firestore.FieldValue.serverTimestamp();
       dadosGoogle.tipo = ''; dadosGoogle.tipo_label = ''; dadosGoogle.tipo_icon = '👤';
       dadosGoogle.xp = 0; dadosGoogle.xp_total = 0; dadosGoogle.nivel = 'Iniciante'; dadosGoogle.plano = 'free';
-      try{ _registrarIndicacaoSeHouver(user.uid); }catch(exInd){}
+      // a indicação só é registrada depois que a pessoa aceitar os Termos (ver _mostrarAceiteGoogle)
     }
     window._fb.salvarPerfil(user.uid, dadosGoogle).catch(function(){});
     if(user.photoURL){
       localStorage.setItem('frilaone_foto', user.photoURL);
+    }
+    if(user._frilaIsNewUser){
+      // Conta NOVA via Google: antes de entrar, apresenta os Termos e a ciência da Política. Quem já tinha conta não passa por aqui.
+      try{ localStorage.setItem('frilaone_aceite_gate', user.uid); }catch(e){}
+      _mostrarAceiteGoogle(user);
+      return;
     }
     _entrarNoApp(nomeUsuario);
   }).catch(function(err){
@@ -4829,14 +4810,6 @@ function vagasFiltro(f){
   }
   _vagasAtualizarVazio();
 }
-function pubVaga(){
-  var t=(document.getElementById('vtit')||{}).value||'';
-  var w=(document.getElementById('vwa')||{}).value||'';
-  if(!t||!w){showToast('Preencha título e WhatsApp','err');return;}
-  window.open('https://mpago.la/22Mdt2J','_blank');
-  document.getElementById('vagas-emp').style.display='none';
-  document.getElementById('vagas-ok').style.display='flex';
-}
 
 // ── PROFIS FILTRO
 function filtrarAcademicos(){
@@ -4952,17 +4925,16 @@ function _carregarAcademicosReais(){
 
 // ── PLANOS: navegação interna ──────────────────────────────────
 var _planAtual='';
-var _planCupomOrigem='';
 var _planPagtoLinks={
-  empresa:  {label:'Empresa/Divulgar vagas', valor:'R$ 14,90/mês', link:'https://mpago.la/22Mdt2J'},
-  prestador:{label:'Prestador',         valor:'R$ 14,90/mês', link:'https://mpago.la/2SyLYAg'},
-  parceiro: {label:'Rede de Parceiros', valor:'R$ 14,90/mês', link:'https://mpago.la/2SyLYAg'},
-  master:   {label:'Todas as áreas',      valor:'R$ 34,90/mês', link:'https://mpago.la/22Yoi8c'},
-  completo: {label:'Todas as áreas',   valor:'R$ 34,90/mês', link:'https://mpago.la/22Mdt2J'},
-  vit:      {label:'Minha Loja',       valor:'R$ 79,90/mês', link:'https://mpago.la/2KnHEaC'}
+  empresa:  {label:'Empresa/Divulgar vagas', valor:'R$ 14,90/mês'},
+  prestador:{label:'Prestador',         valor:'R$ 14,90/mês'},
+  parceiro: {label:'Rede de Parceiros', valor:'R$ 14,90/mês'},
+  master:   {label:'Todas as áreas',      valor:'R$ 34,90/mês'},
+  completo: {label:'Todas as áreas',   valor:'R$ 34,90/mês'},
+  vit:      {label:'Minha Loja',       valor:'R$ 79,90/mês'}
 };
 function _planShowOnly(id){
-  ['plan-menu','plan-empresa','plan-prestador','plan-master','plan-completo','plan-golden','plan-vit','plan-vagas-brasil','plan-cupom','plan-pagto','plan-pulsar'].forEach(function(s){
+  ['plan-menu','plan-empresa','plan-prestador','plan-master','plan-completo','plan-golden','plan-vit','plan-vagas-brasil','plan-pagto','plan-pulsar'].forEach(function(s){
     var el=document.getElementById(s);
     if(el) el.style.display=(s===id)?'block':'none';
   });
@@ -4990,6 +4962,7 @@ function _planoParaCartao(){
 }
 function _cadastrarCartaoAssinatura(){ _abrirConfirmarCartao(false); }
 function _trialFimEfetivo(fimOriginal){
+  if(_assinaturaConfigurada()) return fimOriginal;   // o servidor já aplica a regra da campanha e dos 7 dias
   return Math.min(fimOriginal, TRIAL_CAMPANHA_FIM);
 }
 function _dentroDoTrialGeral(){
@@ -5047,11 +5020,16 @@ function _atualizarPrecoPlano(tipo){
         btn.textContent = '✅ Ativar grátis agora';
         btn.style.background = 'linear-gradient(135deg,#16A34A,#22C55E)';
         btn.onclick = function(){
-          localStorage.setItem('frilaone_master_ativo','1');
-          try{
-            var uidM = window._fbUID || localStorage.getItem('frilaone_uid');
-            if(uidM) firebase.firestore().collection('usuarios').doc(uidM).set({master_ativo:true}, {merge:true}).catch(function(){});
-          }catch(e){}
+          if(_assinaturaConfigurada()){
+            // o servidor confere o direito (teste/código/assinatura) e é ele quem liga o modo Master
+            _definirModoMasterServidor(true).then(function(okM){
+              if(okM){ localStorage.setItem('frilaone_master_ativo','1'); showToast('🎁 Master grátis no período de teste'); }
+              else { showToast('Não foi possível ativar agora. Tente de novo.','warn'); }
+              planVoltar();
+            });
+            return;
+          }
+          localStorage.setItem('frilaone_master_ativo','1');   // v18: só neste aparelho; quem liga o modo Master na conta é o servidor (definirModoMaster)
           showToast('🎁 Master grátis no período de teste');
           planVoltar();
         };
@@ -5068,7 +5046,7 @@ function _atualizarPrecoPlano(tipo){
       btn.style.background = 'var(--pri)';
       btn.onclick = function(){
         if(tipo==='completo') localStorage.setItem('frilaone_master_ativo','1');
-        planSemCupom(tipo);
+        planAssinar(tipo);
       };
     }
   }
@@ -5172,40 +5150,21 @@ function planVoltar(){
   if(sl) sl.scrollTop=0;
   try{ _marcarPlanoAtivo(); }catch(e){}
 }
-function planAbrirCupom(tipo){
+function planAssinar(tipo){
   _planAtual=tipo;
-  _planCupomOrigem=tipo;
-  _planShowOnly('plan-cupom');
-}
-function planVoltarCupom(){
-  planTab(_planCupomOrigem||_planAtual||'empresa');
-}
-function planSemCupom(tipo){
-  _planAtual=tipo;
-  var info=_planPagtoLinks[tipo]||{label:'Plano',valor:'',link:'#'};
+  var info=_planPagtoLinks[tipo]||{label:'Plano',valor:''};
   var el=document.getElementById('plan-pagto-info');
   if(el) el.innerHTML='<div class="syne" style="font-size:15px;font-weight:800;color:var(--tx);margin-bottom:4px">'+info.label+'</div><div style="font-size:21px;color:var(--mu)">'+info.valor+'</div>';
   var lk=document.getElementById('plan-link-mp');
-  if(lk) lk.href=info.link;
+  if(lk){
+    // Caminho único de contratação: assinatura confirmada pelo servidor (nada de link externo)
+    lk.removeAttribute('target');
+    lk.onclick=function(ev){ if(ev && ev.preventDefault) ev.preventDefault(); _abrirPagamentoOficial(); return false; };
+  }
   _planShowOnly('plan-pagto');
 }
 function planVoltarPagto(){
   planTab(_planAtual||'empresa');
-}
-function ativarCupomPlan(){
-  try{
-    var inp=document.getElementById('inp-cupom-plan');
-    var cod=(inp?inp.value:'').trim().toUpperCase();
-    if(!cod){showToast('Digite um cupom válido');return;}
-    var cupons=['EMP-FRILA','PREST-14','MASTER-7','VIT-FREE','FRILA14','FRILAONE'];
-    if(cupons.indexOf(cod)>=0){
-      showToast('&#x2705; Cupom ativado! 30 dias grátis');
-      _planShowOnly('plan-menu');
-      if(inp) inp.value='';
-    } else {
-      showToast('Cupom inválido. Tente outro.');
-    }
-  }catch(e){}
 }
 // ── INCLUSÃO tabs ──────────────────────────────────────────────
 function incTab(tipo){
@@ -5699,7 +5658,7 @@ function salvarPerfil(){
   }
   if(inputEmail && inputEmail.value.trim()){
     localStorage.setItem('frilaone_email_perfil', inputEmail.value.trim());
-    dadosParaSalvar.emailContato = inputEmail.value.trim();
+    _privSalvarUsuario(window._fbUID, {emailContato: inputEmail.value.trim()}); // v18: documento privado (não vai para usuarios, que todo logado lê)
   }
   if(inputCidade && inputCidade.value.trim()){
     localStorage.setItem('frilaone_cidade', inputCidade.value.trim());
@@ -5717,7 +5676,7 @@ function salvarPerfil(){
       return;
     }
     localStorage.setItem('frilaone_cpf', cpfLimpo);
-    dadosParaSalvar.cpf = cpfLimpo;
+    _privSalvarUsuario(window._fbUID, {cpf: cpfLimpo}); // documento privado (não vai mais para usuarios)
     if(cpfStatusEl){ cpfStatusEl.textContent = '✅ CPF válido'; cpfStatusEl.style.color = 'var(--gr)'; }
   }
 
@@ -5751,7 +5710,10 @@ function salvarPerfil(){
   }
   // Master ativo — grava a marca que libera alternar entre Prestador/Acadêmico na aba Serviços
   localStorage.setItem('frilaone_master_ativo', masterAtivo ? '1' : '0');
-  dadosParaSalvar.master_ativo = masterAtivo;
+  // master_ativo:true NUNCA vai no salvamento do perfil, em nenhum modo: as regras (v18) só deixam o servidor ligar.
+  // Desligar (false) é livre. Com o servidor ligado, o pedido de ligar vai para a função definirModoMaster (abaixo).
+  if(!masterAtivo) dadosParaSalvar.master_ativo = false;
+  var pedirMasterAoServidor = _assinaturaConfigurada() && masterAtivo;
   if(masterAtivo && !localStorage.getItem('frilaone_master_modo')){
     localStorage.setItem('frilaone_master_modo','prestador');
   }
@@ -5846,6 +5808,12 @@ function salvarPerfil(){
         { merge: true }
       ).then(function(){
         console.log('[Perfil] Salvo no Firestore:', dadosParaSalvar);
+        if(pedirMasterAoServidor){
+          _definirModoMasterServidor(true).then(function(okM){
+            if(!okM){ localStorage.setItem('frilaone_master_ativo','0'); showToast('Todas as áreas depende do plano ativo. Veja Minha assinatura.','warn'); }
+          });
+        }
+        if(_assinaturaConfigurada()){ try{ _acessoDoServidor(); }catch(eA){} }   // tipo escolhido/alterado: o servidor cria o teste uma única vez
       }).catch(function(e){
         console.error('[Perfil] Erro ao salvar no Firestore:', e);
         showToast('⚠️ Salvo só no aparelho. Salve de novo','warn');
@@ -6428,59 +6396,7 @@ function escolherTipoEdit(tipo,label,icon,viaClique){
   }
 }
 
-function _validarMNSheet(){
-  var inp = document.getElementById('inp-mn-sheet');
-  var msg = document.getElementById('msg-mn-sheet');
-  var codigo = inp ? inp.value.trim().toUpperCase() : '';
-  if(!codigo){ if(msg){msg.style.display='block';msg.style.color='var(--rd)';msg.textContent='Digite o código.';} return; }
-  var usados = {};
-  try{ usados = JSON.parse(localStorage.getItem('frilaone_codigos_mn_usados')||'{}'); }catch(e){}
-  if(_CODIGOS_MN.indexOf(codigo)===-1){
-    if(msg){msg.style.display='block';msg.style.color='var(--rd)';msg.textContent='Código inválido. Somente convidados têm acesso.';}
-    return;
-  }
-  if(usados[codigo] && usados[codigo] !== (window._fbUID||'local')){
-    if(msg){msg.style.display='block';msg.style.color='var(--rd)';msg.textContent='Esse código já foi usado por outra pessoa.';}
-    return;
-  }
-  // Código válido — conceder 30 dias grátis
-  usados[codigo] = window._fbUID||'local';
-  try{ localStorage.setItem('frilaone_codigos_mn_usados', JSON.stringify(usados)); }catch(e){}
-  localStorage.setItem('frilaone_codigo_mn_ativo', codigo);
-  // 30 dias grátis — salva localStorage + Firestore
-  _ativarTrial(codigo, 30);
-  if(msg){msg.style.display='block';msg.style.color='var(--gr)';msg.textContent='✅ Código válido! 30 dias grátis ativados. Abrindo cadastro...';}
-  setTimeout(function(){ closeSheet(); _abrirCadastroNegocio(); }, 700);
-}
 
-function openPag(plano,preco,link){
-  // Salva link para uso no clique - sem aspas aninhadas
-  window._pagLink=link;
-  window._pagPlano=plano;
-  var items=[
-    {icon:'&#x26A1;',nome:'Pix',desc:'Aprovação instantânea'},
-    {icon:'💳',nome:'Cartão de Crédito',desc:'1x sem juros'}
-  ];
-  var sb=document.getElementById('sheet-body');
-  var h='<div class="syne" style="font-size:15px;font-weight:800;color:var(--tx);margin-bottom:4px">Forma de pagamento</div>';
-  h+='<div style="font-size:21px;color:var(--mu);margin-bottom:16px">'+plano+' &middot; '+preco+'</div>';
-  items.forEach(function(m){
-    h+='<div onclick="pagarAgora()" style="display:flex;align-items:center;gap:12px;padding:14px;background:var(--dk3);border:1.5px solid var(--bd);border-radius:14px;cursor:pointer;margin-bottom:8px">';
-    h+='<div style="width:40px;height:40px;border-radius:12px;background:rgba(77,159,255,0.1);display:flex;align-items:center;justify-content:center;font-size:18px">'+m.icon+'</div>';
-    h+='<div style="flex:1"><div class="syne" style="font-size:15px;font-weight:700;color:var(--tx)">'+m.nome+'</div>';
-    h+='<div style="font-size:11px;color:var(--mu)">'+m.desc+'</div></div>';
-    h+='<span style="color:var(--bl);font-size:18px">›</span></div>';
-  });
-  h+='<p style="text-align:center;font-size:10px;color:var(--mu);margin-top:8px">Mercado Pago &middot; Seguro e confiável</p>';
-  sb.innerHTML=h;
-  document.getElementById('sheet-bg').style.display='block';
-  setTimeout(function(){document.getElementById('sheet').classList.add('open');},10);
-}
-function pagarAgora(){
-  if(window._pagLink) window.open(window._pagLink,'_blank');
-  closeSheet();
-  showToast('Redirecionando para pagamento...');
-}
 function closeSheet(){
   var sh=document.getElementById('sheet');
   var bg=document.getElementById('sheet-bg');
@@ -7494,8 +7410,8 @@ function _reprocessarDisponiveis(){
   // E o status Online/Offline dos estagiários cadastrados (perfil é permanente, status é ao vivo)
   try{
     if(_estMock && _estMock.length){
-      _estMock.forEach(function(e){ e.online = !!(window._disponiveisUids && window._disponiveisUids[e.uid]); });
-      renderEstagiarios();
+      renderEstagiarios();   // v4.2: online do estagiário vem de estagiarios/{uid}, não de "disponiveis"
+
     }
   }catch(e){}
 }
@@ -8322,6 +8238,7 @@ function showNotifVaga(msg){
 
 // Chamar verificacao apos login - sem override de funcao
 function posLogin(){
+  try{ _aceitePosLogin(); }catch(eAc){}
   // ── SISTEMA OWNER — passe livre total ──────────────────────────
   // Só a conta frilaoneapp@gmail.com tem acesso irrestrito a todas as áreas para testes
   var _emailAtual = (firebase.auth().currentUser && firebase.auth().currentUser.email) ? firebase.auth().currentUser.email.toLowerCase() : '';
@@ -8473,7 +8390,7 @@ function _checkLimiteVaga(){
   return {ok: usadas < limite, usadas: usadas, limite: limite, tipo: tipo};
 }
 
-// ── PUBLICAR VAGA COM CUPOM
+// ── Contadores de vagas publicadas
 var vagasPublicadas = parseInt(localStorage.getItem('frilaone_vagas') || '0');
 var temPlanoAtivo = localStorage.getItem('frilaone_trial') !== null;
 var primeiroAcesso = localStorage.getItem('frilaone_primeiro_vaga') === null;
@@ -8646,54 +8563,10 @@ function _verPlanosParaSelos(){
   try{ goTab('planos'); }catch(e){}
 }
 
-function cupomSim(){
-  document.getElementById('cupom-modal').style.display = 'none';
-  // Abre sheet para digitar cupom
-  document.getElementById('sheet-body').innerHTML = [
-    '<div class="syne" style="font-size:15px;font-weight:800;color:var(--tx);margin-bottom:4px">Inserir Cupom</div>',
-    '<div style="font-size:12px;color:var(--mu);margin-bottom:16px">30 dias gratis, ate 5 vagas</div>',
-    '<input id="inp-codigo" class="inp" placeholder="Ex: FRILA01" style="width:100%;box-sizing:border-box;text-transform:uppercase;margin-bottom:14px;font-size:21px;text-align:center;font-weight:800;letter-spacing:2px" />',
-    '<button onclick="ativarCupomVaga()" class="btn-pri">Ativar e Publicar Vaga</button>'
-  ].join('');
-  document.getElementById('sheet-bg').style.display = 'block';
-  setTimeout(function(){document.getElementById('sheet').classList.add('open');},10);
-}
-
-function ativarCupomVaga(){
-  var el = document.getElementById('inp-codigo');
-  if(!el) return;
-  var cod = el.value.trim().toUpperCase();
-  if(validarCodigo(cod)){
-    closeSheet();
-    localStorage.setItem('frilaone_primeiro_vaga','1');
-    confirmarPublicacaoVaga();
-  }
-}
-
-function cupomNao(){
-  document.getElementById('cupom-modal').style.display = 'none';
-  // Verificar se tem trial ativo com vagas disponíveis
-  if((_dentroDoTrialGeral() || temPlanoAtivo) && vagasPublicadas < 5){
-    confirmarPublicacaoVaga();
-  } else {
-    // Sem cupom e sem plano: pagar
-    document.getElementById('sheet-body').innerHTML = [
-      '<div class="syne" style="font-size:15px;font-weight:800;color:var(--tx);margin-bottom:4px">Publicar Vaga</div>',
-      '<div style="font-size:12px;color:var(--mu);margin-bottom:16px">Assine para publicar vagas ilimitadas</div>',
-      '<div style="background:rgba(77,159,255,0.1);border:1.5px solid rgba(77,159,255,0.3);border-radius:14px;padding:16px;margin-bottom:16px;text-align:center">',
-      '<div style="font-size:21px;font-weight:800;font-family:sans-serif;color:var(--bl)">R$ 29,90<span style="font-size:18px;color:var(--mu)">/mes</span></div>',
-      '<div style="font-size:11px;color:var(--mu);margin-top:4px">Vagas ilimitadas · Cancele quando quiser</div>',
-      '</div>',
-      '<button onclick="pagarEPublicar()" class="btn-pri" style="margin-bottom:10px">Assinar e Publicar</button>',
-      '<button onclick="closeSheet()" style="width:100%;padding:12px;background:transparent;border:1px solid var(--bd);border-radius:12px;color:var(--mu);font-family:sans-serif;font-weight:600;font-size:21px;cursor:pointer">Cancelar</button>'
-    ].join('');
-    document.getElementById('sheet-bg').style.display = 'block';
-    setTimeout(function(){document.getElementById('sheet').classList.add('open');},10);
-  }
-}
 
 
-function pagarEPublicar(){closeSheet();window.open('https://mpago.la/22Mdt2J','_blank');}
+
+
 // Limpa o formulário de publicar vaga (chamado só DEPOIS de o banco confirmar a publicação)
 function _limparFormVaga(){
   var t = document.getElementById('vtit');
@@ -9040,7 +8913,8 @@ var _estAreaAtiva = '';
 var _estOnline = false;
 var _estComoEsp = false;
 // Estagiários — cadastro permanente na coleção "estagiarios" (fica salvo mesmo offline);
-// status online/offline é cruzado em tempo real com "_disponiveisUids" (mesmo cache do "Tô disponível")
+// v4.2: o status online/offline do estagiário é do PRÓPRIO cadastro (estagiarios/{uid}.online + onlineTs); estágio NÃO usa a coleção
+// "disponiveis" nem o "Tô disponível" (estudantes em formação não se misturam com profissionais que oferecem serviço)
 var _estMock = [];
 var _estagiariosListenerAtivo = false;
 function _iniciarListenerEstagiarios(){
@@ -9052,7 +8926,7 @@ function _iniciarListenerEstagiarios(){
         var lista = [];
         snap.forEach(function(doc){
           var d = doc.data();
-          var estaOnline = !!(window._disponiveisUids && window._disponiveisUids[doc.id]);
+          var estaOnline = _estEstaOnline(d);
           lista.push({
             nome: d.nome||'Estagiário', area: d.area||'', periodo: d.periodo||'',
             facul: d.facul||'', sup: d.sup||'', desc: d.desc||'',
@@ -9066,6 +8940,23 @@ function _iniciarListenerEstagiarios(){
         _estagiariosListenerAtivo = false;
       });
   }catch(ex){ console.error('_iniciarListenerEstagiarios erro:', ex); }
+}
+
+// v4.2 — presença do estagiário no PRÓPRIO cadastro (estagiarios/{uid}); nada é gravado em "disponiveis"
+function _estEstaOnline(d){
+  try{
+    if(!d || d.online !== true) return false;
+    var ts = d.onlineTs && d.onlineTs.toMillis ? d.onlineTs.toMillis() : (typeof d.onlineTs === 'number' ? d.onlineTs : 0);
+    return !ts || (Date.now() - ts) < (2 * 60 * 60 * 1000);   // sem renovar por 2 h = offline (igual ao "Tô disponível")
+  }catch(e){ return false; }
+}
+var _estHeartbeatInt = null;
+function _estPararHeartbeat(){ if(_estHeartbeatInt){ clearInterval(_estHeartbeatInt); _estHeartbeatInt = null; } }
+function _estIniciarHeartbeat(uid){
+  _estPararHeartbeat();
+  _estHeartbeatInt = setInterval(function(){
+    try{ firebase.firestore().collection('estagiarios').doc(uid).set({ onlineTs: firebase.firestore.FieldValue.serverTimestamp() }, { merge: true }).catch(function(){}); }catch(e){}
+  }, 60000);
 }
 
 // ══ BANCO DE CURRÍCULOS (novo — não interfere em nada acima) ══
@@ -9084,12 +8975,12 @@ var I18N_DIC = {
     auth_tab_entrar:'Entrar', auth_tab_cadastrar:'Cadastrar',
     auth_label_nome:'Nome completo', auth_ph_nome:'Seu nome',
     auth_label_email:'E-mail', auth_label_senha:'Senha',
-    auth_terms:'Li e concordo com os <span style="color:var(--pri);font-weight:700">Termos de Uso</span> e a <span style="color:var(--pri);font-weight:700">Política de Privacidade</span> do FrilaOne.',
+    auth_terms:'Li e concordo com os <span data-doc="termos" style="color:var(--pri);font-weight:700;text-decoration:underline">Termos de Uso</span> e a <span data-doc="privacidade" style="color:var(--pri);font-weight:700;text-decoration:underline">Política de Privacidade</span> do FrilaOne.',
     auth_btn_entrar:'⚡ Entrar agora',
     auth_esqueci:'Esqueceu a senha? Recuperar por e-mail',
     auth_ou:'ou',
     auth_aviso_titulo:'AVISO LEGAL — ISENÇÃO DE RESPONSABILIDADE',
-    auth_aviso_corpo:'O <strong style="color:rgba(255,255,255,0.5)">FrilaOne</strong> é uma <strong style="color:rgba(255,255,255,0.5)">plataforma de conexão</strong> entre prestadores de serviço, trabalhadores, empresas e clientes. Não somos parte em nenhum acordo, contrato ou negociação de valores realizada entre os usuários.<br><br>Acordos financeiros, combinações de preços, formas de pagamento e condições de serviço são de <strong style="color:rgba(255,255,255,0.5)">responsabilidade exclusiva das partes envolvidas</strong>. O FrilaOne não intermedia pagamentos, não garante a execução de serviços e não responde por inadimplemento, danos ou prejuízos decorrentes de negociações entre usuários.<br><br>Ao utilizar esta plataforma, você declara ter lido e concordar com nossos <span onclick="showToast(\'Termos em breve!\')" style="color:var(--bl);cursor:pointer;text-decoration:underline">Termos de Uso</span> e <span onclick="showToast(\'Política em breve!\')" style="color:var(--bl);cursor:pointer;text-decoration:underline">Política de Privacidade</span>. Em caso de conflito entre usuários, recomendamos contato com os órgãos competentes (PROCON, Juizado Especial Cível).',
+    auth_aviso_corpo:'O <strong style="color:rgba(255,255,255,0.5)">FrilaOne</strong> é uma <strong style="color:rgba(255,255,255,0.5)">plataforma de conexão</strong> entre prestadores de serviço, trabalhadores, empresas e clientes. Não somos parte em nenhum acordo, contrato ou negociação de valores realizada entre os usuários.<br><br>Acordos financeiros, combinações de preços, formas de pagamento e condições de serviço são de <strong style="color:rgba(255,255,255,0.5)">responsabilidade exclusiva das partes envolvidas</strong>. O FrilaOne não intermedia pagamentos, não garante a execução de serviços e não responde por inadimplemento, danos ou prejuízos decorrentes de negociações entre usuários.<br><br>Ao utilizar esta plataforma, você declara ter lido e concordar com nossos <span onclick="cfgTermos()" style="color:var(--bl);cursor:pointer;text-decoration:underline">Termos de Uso</span> e <span onclick="cfgPrivacidade()" style="color:var(--bl);cursor:pointer;text-decoration:underline">Política de Privacidade</span>. Em caso de conflito entre usuários, recomendamos contato com os órgãos competentes (PROCON, Juizado Especial Cível).',
     auth_footer:'FrilaOne © 2025 · Sete Lagoas, MG · Plataforma de Conexão'
   },
   en: {
@@ -9101,12 +8992,12 @@ var I18N_DIC = {
     auth_tab_entrar:'Log In', auth_tab_cadastrar:'Sign Up',
     auth_label_nome:'Full name', auth_ph_nome:'Your name',
     auth_label_email:'Email', auth_label_senha:'Password',
-    auth_terms:'I have read and agree to FrilaOne\'s <span style="color:var(--pri);font-weight:700">Terms of Use</span> and <span style="color:var(--pri);font-weight:700">Privacy Policy</span>.',
+    auth_terms:'I have read and agree to FrilaOne\'s <span data-doc="termos" style="color:var(--pri);font-weight:700;text-decoration:underline">Terms of Use</span> and <span data-doc="privacidade" style="color:var(--pri);font-weight:700;text-decoration:underline">Privacy Policy</span>.',
     auth_btn_entrar:'⚡ Log in now',
     auth_esqueci:'Forgot your password? Recover by email',
     auth_ou:'or',
     auth_aviso_titulo:'LEGAL NOTICE — DISCLAIMER',
-    auth_aviso_corpo:'<strong style="color:rgba(255,255,255,0.5)">FrilaOne</strong> is a <strong style="color:rgba(255,255,255,0.5)">connection platform</strong> between service providers, workers, businesses and clients. We are not a party to any agreement, contract or price negotiation made between users.<br><br>Financial agreements, pricing, payment methods and service terms are the <strong style="color:rgba(255,255,255,0.5)">sole responsibility of the parties involved</strong>. FrilaOne does not intermediate payments, does not guarantee service execution, and is not liable for default, damages or losses arising from negotiations between users.<br><br>By using this platform, you state that you have read and agree to our <span onclick="showToast(\'Coming soon!\')" style="color:var(--bl);cursor:pointer;text-decoration:underline">Terms of Use</span> and <span onclick="showToast(\'Coming soon!\')" style="color:var(--bl);cursor:pointer;text-decoration:underline">Privacy Policy</span>. In case of conflict between users, we recommend contacting the competent authorities.',
+    auth_aviso_corpo:'<strong style="color:rgba(255,255,255,0.5)">FrilaOne</strong> is a <strong style="color:rgba(255,255,255,0.5)">connection platform</strong> between service providers, workers, businesses and clients. We are not a party to any agreement, contract or price negotiation made between users.<br><br>Financial agreements, pricing, payment methods and service terms are the <strong style="color:rgba(255,255,255,0.5)">sole responsibility of the parties involved</strong>. FrilaOne does not intermediate payments, does not guarantee service execution, and is not liable for default, damages or losses arising from negotiations between users.<br><br>By using this platform, you state that you have read and agree to our <span onclick="cfgTermos()" style="color:var(--bl);cursor:pointer;text-decoration:underline">Terms of Use</span> and <span onclick="cfgPrivacidade()" style="color:var(--bl);cursor:pointer;text-decoration:underline">Privacy Policy</span>. In case of conflict between users, we recommend contacting the competent authorities.',
     auth_footer:'FrilaOne © 2025 · Sete Lagoas, MG, Brazil · Connection Platform'
   }
 };
@@ -9496,7 +9387,7 @@ function toggleEstOnline(){
     showToast('Complete o cadastro de Estagiário','warn');
     return;
   }
-  if(!_estOnline && !_permitirAcaoPaga()) return;
+  // v4.2: estágio é gratuito e separado dos planos — sem trava de assinatura aqui
   _estOnline = !_estOnline;
   var saved = JSON.parse(localStorage.getItem('frilaone_est_perfil')||'{}');
   saved.online = _estOnline;
@@ -9504,28 +9395,18 @@ function toggleEstOnline(){
   _updateEstToggle();
   showToast(_estOnline ? '🟢 Você está online!' : 'Você ficou offline');
   if(_estOnline){ _estStartDopamina(); } else { _estStopDopamina(); }
-  // Salvar/remover em disponiveis para aparecer em tempo real
+  // v4.2: grava a presença no próprio cadastro de estagiário (NÃO em "disponiveis")
   try{
     var uidE = window._fbUID || (firebase.auth().currentUser ? firebase.auth().currentUser.uid : null);
     if(uidE){
+      var refE = firebase.firestore().collection('estagiarios').doc(uidE);
       if(_estOnline){
-        firebase.firestore().collection('disponiveis').doc(uidE).set({
-          uid: uidE,
-          nome: localStorage.getItem('frilaone_nome') || saved.nome || 'Estagiário',
-          foto: localStorage.getItem('frilaone_foto') || '',
-          bio: (saved.area||'Estagiário') + (saved.periodo?(' · '+saved.periodo):''),
-          categoria: 'estagiario',
-          area: saved.area||'',
-          periodo: saved.periodo||'',
-          facul: saved.facul||'',
-          sup: saved.sup||'',
-          desc: saved.desc||'',
-          ts: firebase.firestore.FieldValue.serverTimestamp()
-        }).then(function(){ _iniciarHeartbeatPresenca(uidE); })
+        refE.set({ online: true, onlineTs: firebase.firestore.FieldValue.serverTimestamp() }, { merge: true })
+          .then(function(){ _estIniciarHeartbeat(uidE); })
           .catch(function(err){ console.error('Erro ao salvar estagiário online:', err); });
       } else {
-        _pararHeartbeatPresenca();
-        firebase.firestore().collection('disponiveis').doc(uidE).delete().catch(function(){});
+        _estPararHeartbeat();
+        refE.set({ online: false }, { merge: true }).catch(function(){});
       }
     }
   }catch(exE){ console.error('toggleEstOnline erro:', exE); }
@@ -9600,11 +9481,10 @@ function excluirCadastroEstagiario(){
   try{
     var uidDel = window._fbUID || (firebase.auth().currentUser ? firebase.auth().currentUser.uid : null);
     if(uidDel){
-      firebase.firestore().collection('estagiarios').doc(uidDel).delete().catch(function(){});
-      firebase.firestore().collection('disponiveis').doc(uidDel).delete().catch(function(){});
+      firebase.firestore().collection('estagiarios').doc(uidDel).delete().catch(function(){});   // v4.2: não mexe em "disponiveis" (é outro recurso)
     }
   }catch(exDel){ console.error('excluirCadastroEstagiario erro:', exDel); }
-  _pararHeartbeatPresenca();
+  _estPararHeartbeat();
   _estOnline = false;
   localStorage.removeItem('frilaone_est_perfil');
   showToast('Cadastro de Estagiário excluído.', 'warn');
@@ -9829,7 +9709,14 @@ function _carregarAgendamentosPendentes(){
           if(!recusado && !expirado && tipoOk){ d._id = doc.id; itens.push(d); }
         });
         _renderizarAgendamentosPendentes(itens);
-      }).catch(function(err){ console.error('Erro ao buscar agendamentos:', err); });
+      }).catch(function(err){
+        console.error('Erro ao buscar agendamentos:', err);
+        // Regras v17: só profissional Acadêmico APROVADO vê pedidos abertos. Sem aprovação o servidor nega a consulta.
+        if(err && err.code === 'permission-denied'){
+          box.style.display = 'block';
+          box.innerHTML = '<div style="font-size:12px;color:var(--mu2);line-height:1.5;padding:12px 14px;background:var(--dk3);border:1px solid var(--bd);border-radius:12px">🛡️ Seu cadastro profissional está em análise. Quando for aprovado, os pedidos de atendimento aparecerão aqui.</div>';
+        }
+      });
     }
     if(window._fb && window._fb.carregarPerfil){
       window._fb.carregarPerfil(uid).then(function(perfil){
@@ -10006,162 +9893,8 @@ function enviarSolicitacao(nome,prof,local,desc,gratis){
 }
 
 
-// ── 50 CODIGOS PROMOCIONAIS (30 dias grátis)
-var codigosEmpresa=[
-  'FRLB10F66',
-  'FRL879B81',
-  'FRL23A496',
-  'FRL20AD8A',
-  'FRL0F0473',
-  'FRL4B1BEB',
-  'FRLC5AA4D',
-  'FRL0AFDFC',
-  'FRL0E3E1A',
-  'FRLEA8C7E',
-  'FRLD39B9D',
-  'FRL2FA5C1',
-  'FRL8DE8A5',
-  'FRLC791BA',
-  'FRLBB5058',
-  'FRL8375FC',
-  'FRL1CF7C9',
-  'FRL72D418',
-  'FRLF63433',
-  'FRL13BFA7',
-  'FRL3EF4C8',
-  'FRL5C2EF2',
-  'FRL98586E',
-  'FRL7475CD',
-  'FRLF7ACD9',
-  'FRLBC4884',
-  'FRL76755D',
-  'FRLF74201',
-  'FRLC4B3B7',
-  'FRL7D5BDC',
-  'FRLF1D2DE',
-  'FRLF90048',
-  'FRL3BD9C0',
-  'FRL4A635F',
-  'FRL03CB01',
-  'FRL476010',
-  'FRL9E76FC',
-  'FRL9D0659',
-  'FRLE26D33',
-  'FRLC5BC4B',
-  'FRL5056A4',
-  'FRL23352E',
-  'FRL16BA69',
-  'FRL2C0E27',
-  'FRLC41DCC',
-  'FRLD18DA0',
-  'FRL79DCAE',
-  'FRL02C9FD',
-  'FRLA5D9A7',
-  'FRL7DD1C7'
-];
-var codigosVitrine=[
-  'VITACF7A8',
-  'VIT14105A',
-  'VIT963D7C',
-  'VIT0103E0',
-  'VITE270BC',
-  'VIT8751DD',
-  'VITEA4906',
-  'VITFA40F0',
-  'VITA11541',
-  'VIT11D257',
-  'VIT32E232',
-  'VITD54648',
-  'VIT3D5D50',
-  'VITC4C94F',
-  'VIT200F25',
-  'VIT6CD23D',
-  'VIT63A10C',
-  'VITEBE088',
-  'VIT360946',
-  'VIT83FCA8',
-  'VITBD9E9F',
-  'VIT2568FB',
-  'VITD0C293',
-  'VIT9E7363',
-  'VIT54562E',
-  'VITFCCEDD',
-  'VIT474674',
-  'VITD3585D',
-  'VIT761849',
-  'VITCE9D6C',
-  'VIT090308',
-  'VIT23AE33',
-  'VIT358DE9',
-  'VITF42093',
-  'VITA32013',
-  'VITFDD1EE',
-  'VITCC1EFF',
-  'VITFEEAE7',
-  'VIT62139F',
-  'VITD071F5',
-  'VIT66C688',
-  'VITC95CDC',
-  'VIT719B81',
-  'VITA16E53',
-  'VITDFFD79',
-  'VITFA3F70',
-  'VIT359F0B',
-  'VIT2D6DB1',
-  'VIT9B417B',
-  'VITC78948'
-];
-var codigosPromo=[...codigosEmpresa,...codigosVitrine]
-var codigosUsados=JSON.parse(localStorage.getItem('frilaone_codigos_usados')||'[]');
-
-function validarCodigo(cod){
-  cod=cod.toUpperCase().trim();
-  // Verifica se cupom já foi usado neste dispositivo
-  if(codigosUsados.includes(cod)){
-    showToast('Este cupom já foi utilizado neste dispositivo ❌','err');
-    return false;
-  }
-  // Verifica se já existe trial ativo
-  var trialAtivo=localStorage.getItem('frilaone_trial_ativo');
-  if(trialAtivo==='true'){
-    showToast('Você já possui um período gratuito ativo ❌','err');
-    return false;
-  }
-  // Valida cupom EMPRESA
-  if(codigosEmpresa.includes(cod)){
-    codigosUsados.push(cod);
-    localStorage.setItem('frilaone_codigos_usados',JSON.stringify(codigosUsados));
-    localStorage.setItem('frilaone_tipo_plano','empresa');
-    localStorage.setItem('frilaone_valor_plano','19.90');
-    localStorage.setItem('frilaone_trial_ativo','true');
-    localStorage.setItem('frilaone_trial_cod',cod);
-    ativarTrial(cod);
-    showToast('&#x2705; Cupom ativado! 30 dias grátis → R$19,90/mês');
-    return true;
-  }
-  // Valida cupom VITRINE
-  if(codigosVitrine.includes(cod)){
-    codigosUsados.push(cod);
-    localStorage.setItem('frilaone_codigos_usados',JSON.stringify(codigosUsados));
-    localStorage.setItem('frilaone_tipo_plano','vitrine');
-    localStorage.setItem('frilaone_valor_plano','149.90');
-    localStorage.setItem('frilaone_trial_ativo','true');
-    localStorage.setItem('frilaone_trial_cod',cod);
-    ativarTrial(cod);
-    showToast('&#x2705; Cupom ativado! 30 dias grátis → R$149,90/mês');
-    return true;
-  }
-  showToast('Código inválido ❌','err');return false;
-}
 
 // ── SISTEMA TRIAL 30 DIAS
-function ativarTrial(cod){
-  var inicio=Date.now();
-  var fim=inicio+(30*24*60*60*1000);
-  localStorage.setItem('frilaone_trial',JSON.stringify({cod:cod,inicio:inicio,fim:fim,ativo:true}));
-  showToast('🎉 30 dias grátis ativados! Código: '+cod);
-  verificarTrial();
-}
 
 
 
@@ -10188,16 +9921,6 @@ function fecharTrialModal(){
   if(m) m.style.display='none';
 }
 
-function ativarCodigoPromo(){var el=document.getElementById("inp-codigo-promo");if(el&&validarCodigo(el.value)){closeSheet();}}
-function abrirCodigoPromo(){
-  var html='<div class="syne" style="font-size:15px;font-weight:800;color:var(--tx);margin-bottom:4px">🎟️ Código Promocional</div>';
-  html+='<div style="font-size:12px;color:var(--mu);margin-bottom:16px">Especial de Lançamento para anunciar no FrilaOne</div>';
-  html+='<input id="inp-codigo-promo" class="inp" placeholder="Ex: FRILA01" style="width:100%;box-sizing:border-box;text-transform:uppercase;margin-bottom:14px;font-size:18px;text-align:center;font-weight:700" />';
-  html+='<button onclick="ativarCodigoPromo()" class="btn-pri">Ativar codigo gratis</button>';
-  document.getElementById('sheet-body').innerHTML=html;
-  document.getElementById('sheet-bg').style.display='block';
-  setTimeout(function(){document.getElementById('sheet').classList.add('open');},10);
-}
 
 // Verificar trial ao entrar no app
 // (compartilharApp fica definida mais abaixo, com mensagem por tipo de usuário)
@@ -10314,10 +10037,8 @@ function fecharShare(){
   if(m) m.style.display='none';
 }
 function shareVia(canal){
-  var cod = (typeof _getMeuCodigoConvite === 'function') ? _getMeuCodigoConvite() : '';
   var link = (typeof _getLinkComConvite === 'function') ? _getLinkComConvite() : 'https://app-frila-one.vercel.app';
   var txt = '⚡ Conheces o FrilaOne?\nO marketplace dos melhores profissionais de Sete Lagoas!\n\n'
-    + (cod ? ('🎁 Use meu código e ganhe 30 dias GRÁTIS: *' + cod + '*\n\n') : '')
     + '👇 Acesse agora:\n' + link;
   fecharShare();
   if(canal==='whatsapp'){
@@ -10418,7 +10139,7 @@ function abrirVitrineCompleta(){
   // botão quero minha vitrine
   html+='<div style="border-top:1px solid var(--bd);padding-top:14px">';
   html+='<div style="font-size:11px;color:var(--mu);text-align:center;margin-bottom:10px">Quer aparecer aqui também?</div>';
-  html+='<button onclick="perguntarCupomVitrine()" class="btn-pri" style="background:var(--bl)">+ Quero minha Vitrine</button>';
+  html+='<button onclick="quererMinhaVitrine()" class="btn-pri" style="background:var(--bl)">+ Quero minha Vitrine</button>';
   html+='</div>';
   document.getElementById('sheet-body').innerHTML=html;
   document.getElementById('sheet-bg').style.display='block';
@@ -10427,63 +10148,16 @@ function abrirVitrineCompleta(){
     renderVitrineCards('');
   },10);
 }
-function perguntarCupomVitrine(){
-  // Pergunta se tem cupom — mesmo fluxo do sistema de vagas
-  document.getElementById('sheet-body').innerHTML=[
-    '<div class="syne" style="font-size:15px;font-weight:800;color:var(--tx);margin-bottom:8px">&#x1F91D; Anunciar na Vitrine</div>',
-    '<div style="font-size:12px;color:var(--mu);margin-bottom:20px">Apareça para clientes de Sete Lagoas e região</div>',
-    '<div style="text-align:center;font-size:40px;margin-bottom:12px">🎟️</div>',
-    '<div class="syne" style="font-size:15px;font-weight:800;color:var(--tx);text-align:center;margin-bottom:6px">Você tem um cupom?</div>',
-    '<div style="font-size:12px;color:var(--mu);text-align:center;margin-bottom:20px">Com cupom: Especial de Lançamento<br>Sem cupom: R$29,90/mês</div>',
-    '<div style="display:flex;gap:10px">',
-    '<button onclick="cupomVitrineSim()" style="flex:1;padding:14px;background:linear-gradient(135deg,var(--gr),#00b87a);border:none;border-radius:14px;color:#000;font-family:sans-serif;font-weight:800;font-size:18px;cursor:pointer">Sim, tenho!</button>',
-    '<button onclick="cupomVitrineNao()" style="flex:1;padding:14px;background:var(--dk3);border:1px solid var(--bd);border-radius:14px;color:var(--tx);font-family:sans-serif;font-weight:700;font-size:18px;cursor:pointer">Não tenho</button>',
-    '</div>'
-  ].join('');
-}
 
-function cupomVitrineSim(){
-  document.getElementById('sheet-body').innerHTML=[
-    '<div class="syne" style="font-size:15px;font-weight:800;color:var(--tx);margin-bottom:4px">Inserir Cupom</div>',
-    '<div style="font-size:12px;color:var(--mu);margin-bottom:16px">30 dias gratis na Vitrine FrilaOne</div>',
-    '<input id="inp-codigo-vit" class="inp" placeholder="Ex: VITE01" style="width:100%;box-sizing:border-box;text-transform:uppercase;margin-bottom:14px;font-size:21px;text-align:center;font-weight:800;letter-spacing:2px"/>',
-    '<button onclick="ativarCupomVitrineForm()" class="btn-pri" style="background:var(--bl)">Ativar cupom gratis</button>'
-  ].join('');
-}
 
-function ativarCupomVitrineForm(){
-  var el=document.getElementById('inp-codigo-vit')||document.getElementById('inp-codigo');
-  if(!el) return;
-  var cod=el.value.trim().toUpperCase();
-  if(validarCodigo(cod)){
-    closeSheet();
-    showToast('Vitrine ativada! 30 dias gratis &#x2705;');
-    setTimeout(function(){abrirCadastroVitrine();},600);
-  }
-}
 
-function cupomVitrineNao(){
-  // Sem cupom — vai para pagamento R$14,90
-  document.getElementById('sheet-body').innerHTML=[
-    '<div class="syne" style="font-size:15px;font-weight:800;color:var(--tx);margin-bottom:4px">Anunciar na Vitrine</div>',
-    '<div style="font-size:12px;color:var(--mu);margin-bottom:16px">Apareça para toda Sete Lagoas</div>',
-    '<div style="background:rgba(77,159,255,0.08);border:1.5px solid rgba(77,159,255,0.2);border-radius:14px;padding:16px;margin-bottom:16px;text-align:center">',
-    '<div style="font-size:11px;color:var(--mu);margin-bottom:4px">Investimento mensal</div>',
-    '<div class="syne" style="font-size:15px;font-weight:800;color:var(--pri)">R$ 14,90</div>',
-    '<div style="font-size:10px;color:var(--mu);margin-top:4px">por menos de R$0,50 por dia</div>',
-    '</div>',
-    '<button onclick="pagarVitrine()" class="btn-pri" style="background:linear-gradient(135deg,#4D9FFF,#007BB5);margin-bottom:10px">Pagar e anunciar agora</button>',
-    '<button onclick="abrirVitrineCompleta()" style="width:100%;padding:11px;background:transparent;border:1px solid var(--bd);border-radius:12px;color:var(--mu);font-family:sans-serif;font-weight:600;font-size:21px;cursor:pointer">Voltar</button>'
-  ].join('');
-}
 
-function pagarVitrine(){
+
+// Vitrine: quem já tem acesso confirmado ao plano Minha Loja cadastra; os demais vão para os planos oficiais (sem "pagamento confirmado" falso).
+function quererMinhaVitrine(){
   closeSheet();
-  window.open('https://mpago.la/2SyLYAg','_blank');
-  setTimeout(function(){
-    showToast('Pagamento confirmado! Preenchendo cadastro...');
-    setTimeout(abrirCadastroVitrine, 800);
-  },3000);
+  if(_planoAtivo('vit')){ setTimeout(abrirCadastroVitrine,450); return; }
+  abrirVitrine();
 }
 
 function abrirCadastroVitrine(){
@@ -10626,29 +10300,11 @@ function _btnCurtida(id, tipo, label){
 // ════════════════════════════════════════════════════════════
 // COMPARTILHAR
 // ════════════════════════════════════════════════════════════
-// ── Código pessoal de convite — gerado 1x por usuário ──────────────────────
-function _getMeuCodigoConvite(){
-  // Verifica se já tem código atribuído
-  var cod = localStorage.getItem('frilaone_meu_codigo_convite');
-  if(cod) return cod;
-  // Pega o próximo índice disponível globalmente (baseado no UID ou timestamp)
-  var uid = window._fbUID || '';
-  var seed = uid ? parseInt(uid.replace(/\D/g,'').slice(0,6)||'0') : Date.now();
-  var idx = (seed % 4900) + 100; // entre 100 e 4999 para não conflitar com GP
-  var n = String(idx);
-  while(n.length<5) n='0'+n;
-  cod = 'CV-'+n;
-  localStorage.setItem('frilaone_meu_codigo_convite', cod);
-  return cod;
-}
 
-// ── URL do app com código embutido ─────────────────────────────────────────
+// ── Link de compartilhamento do app (sem código: o sistema de códigos de convite foi retirado) ──
 function _getLinkComConvite(){
-  var cod = _getMeuCodigoConvite();
-  var base = window.location.origin + window.location.pathname.replace(/\/[^/]*$/, '') || 'https://incomparable-cascaron-0d8282.netlify.app';
-  // Limpar trailing slash
-  base = base.replace(/\/$/, '');
-  return base + '?convite=' + cod;
+  var base = window.location.origin + window.location.pathname.replace(/\/[^/]*$/, '') || 'https://frilaone.com.br';
+  return base.replace(/\/$/, '');
 }
 
 function compartilharApp(){
@@ -11792,18 +11448,6 @@ function _addLikeShareToVagas(){
 setTimeout(_addLikeShareToVagas, 1200);
 
 </script>
-<!-- MODAL CUPOM VAGA -->
-<div id="cupom-modal" style="position:fixed;top:0;left:0;right:0;bottom:0;z-index:800;background:rgba(0,0,0,0.8);display:none;align-items:center;justify-content:center;padding:24px;backdrop-filter:blur(6px)">
-  <div style="background:var(--dk2);border:1.5px solid var(--bd);border-radius:22px;padding:24px;width:100%;max-width:340px;text-align:center">
-    <div style="font-size:40px;margin-bottom:12px">🎟️</div>
-    <div class="syne" style="font-size:15px;font-weight:800;color:var(--tx);margin-bottom:8px">Você tem um cupom?</div>
-    <div id="cupom-vagas-info" style="font-size:12px;color:var(--mu);line-height:1.5;margin-bottom:20px">Publique até 5 vagas gratuitamente por 30 dias.<br>Plano mensal ou anual: vagas ilimitadas.</div>
-    <div style="display:flex;gap:10px">
-      <button onclick="cupomSim()" style="flex:1;padding:14px;background:linear-gradient(135deg,var(--gr),#00b87a);border:none;border-radius:14px;color:#000;font-family:sans-serif;font-weight:800;font-size:18px;cursor:pointer">Sim, tenho!</button>
-      <button onclick="cupomNao()" style="flex:1;padding:14px;background:var(--dk3);border:1px solid var(--bd);border-radius:14px;color:var(--tx);font-family:sans-serif;font-weight:700;font-size:18px;cursor:pointer">Não tenho</button>
-    </div>
-  </div>
-</div>
 
 <!-- TRIAL MODAL -->
 <div id="trial-modal" style="position:fixed;top:0;left:0;right:0;bottom:0;z-index:800;background:rgba(0,0,0,0.85);display:none;align-items:center;justify-content:center;padding:24px;backdrop-filter:blur(8px)">
@@ -11812,7 +11456,7 @@ setTimeout(_addLikeShareToVagas, 1200);
     <div id="trial-dias" class="syne" style="font-size:15px;font-weight:800;color:var(--pri);margin-bottom:8px">5 dias restantes</div>
     <div class="syne" style="font-size:15px;font-weight:800;color:var(--tx);margin-bottom:8px">Renovar Plano</div>
     <div id="trial-msg" style="font-size:12px;color:var(--mu2);line-height:1.6;margin-bottom:20px">Faltam 5 dias para vencer. Renove agora!</div>
-    <button onclick="goTab('planos');planTab('emp');fecharTrialModal()" class="btn-pri" style="margin-bottom:10px">💎 Assinar R$19,90/mês</button>
+    <button onclick="goTab('planos');planTab('emp');fecharTrialModal()" class="btn-pri" style="margin-bottom:10px">💎 Ver planos</button>
     <button onclick="fecharTrialModal()" style="width:100%;padding:10px;background:transparent;border:1px solid var(--bd);border-radius:12px;color:var(--mu);font-family:sans-serif;font-weight:600;font-size:21px;cursor:pointer">Lembrar depois</button>
   
 </div>
@@ -12891,7 +12535,7 @@ function compartilharOferta(nome){
 </div>
 
 
-<!-- MODAL PAGAMENTO / CUPOM -->
+<!-- MODAL PAGAMENTO -->
 <div id="modal-pagamento" style="display:none;position:fixed;inset:0;z-index:1100;background:rgba(0,0,0,0.85);backdrop-filter:blur(8px);align-items:flex-end;justify-content:center">
   <div style="background:var(--dk2);border:1.5px solid var(--bd);border-radius:24px 24px 0 0;width:100%;max-width:430px;padding:24px 20px 40px;position:relative">
     <button onclick="_fecharModalPag()" style="position:absolute;top:12px;right:14px;width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,0.08);border:none;color:var(--mu2);font-size:21px;cursor:pointer;display:flex;align-items:center;justify-content:center">&#x2715;</button>
@@ -12905,14 +12549,6 @@ function compartilharOferta(nome){
       <div style="display:inline-block;margin-top:6px;padding:3px 10px;background:rgba(232,89,12,0.12);border-radius:20px;font-size:10px;font-weight:800;color:var(--pri);text-transform:uppercase;letter-spacing:.4px">🚀 Preço de lançamento</div>
     </div>
     <div style="text-align:center;font-size:11px;color:var(--mu);margin-bottom:16px">Cancele quando quiser, sem multa. Você não paga nada até decidir continuar.</div>
-    <!-- Cupom -->
-    <div id="modal-pag-cupom-area" style="margin-bottom:14px">
-      <div style="display:flex;gap:8px">
-        <input id="modal-pag-cupom-inp" class="inp" placeholder="Código do cupom (opcional)" style="flex:1;margin:0"/>
-        <button onclick="_aplicarCupomModal()" style="padding:0 16px;background:var(--dk3);border:1px solid var(--bd);border-radius:10px;color:var(--mu2);font-family:sans-serif;font-weight:700;font-size:12px;cursor:pointer;white-space:nowrap">Aplicar</button>
-      </div>
-      <div id="modal-pag-cupom-msg" style="font-size:11px;color:var(--gr);margin-top:6px;display:none">&#x2705; 30 dias grátis ativados!</div>
-    </div>
     <!-- Botões -->
     <button id="modal-pag-btn-pagar" onclick="_confirmarPagamentoModal()" style="width:100%;padding:14px;border:none;border-radius:12px;background:linear-gradient(135deg,var(--pri),#c44400);color:#fff;font-family:sans-serif;font-weight:800;font-size:18px;cursor:pointer;margin-bottom:10px">💳 Assinar agora</button>
     <button id="modal-pag-btn-trial" onclick="_ativarTrialModal()" style="width:100%;padding:12px;border:1px solid rgba(0,214,143,0.3);border-radius:12px;background:rgba(0,214,143,0.05);color:var(--gr);font-family:sans-serif;font-weight:700;font-size:21px;cursor:pointer">🎁 Ativar Especial de Lançamento</button>
@@ -12950,24 +12586,25 @@ function compartilharOferta(nome){
 // ═══════════════════════════════════════════════════
 
 var _PLANOS = {
-  master:    {nome:'Todas as áreas',    preco:'R$ 34,90/mês', link:'https://mpago.la/22Yoi8c', dias:30,
+  master:    {nome:'Todas as áreas',    preco:'R$ 34,90/mês', dias:30,
     beneficios:'&#x2705; Perfil com registro profissional exibido\n&#x2705; Receber solicitações de clientes\n&#x2705; Chat interno com clientes\n&#x2705; Ficar online no Radar\n&#x2705; Gerenciar estagiários'},
-  parceiro:  {nome:'Rede de Parceiros',preco:'R$ 14,90/mês', link:'https://mpago.la/2SyLYAg', dias:30,
+  parceiro:  {nome:'Rede de Parceiros',preco:'R$ 14,90/mês', dias:30,
     beneficios:'&#x2705; 3 primeiros clientes grátis\n&#x2705; Chat ilimitado depois de assinar\n&#x2705; Perfil verificado\n&#x2705; Radar sem limite de horário'},
-  empresa:   {nome:'Empresa/Divulgar vagas',preco:'R$ 14,90/mês', link:'https://mpago.la/1ciM5JS', dias:30,
+  empresa:   {nome:'Empresa/Divulgar vagas',preco:'R$ 14,90/mês', dias:30,
     beneficios:'&#x2705; Publicar vagas normais\n&#x2705; Chat com candidatos\n&#x2705; 5 vagas por semana'},
   
-  negocio:   {nome:'Minha Loja',  preco:'R$ 149,90 / 6 meses', link:'https://mpago.la/1ciM5JS', dias:180,
+  negocio:   {nome:'Minha Loja',  preco:'R$ 79,90/mês', dias:30,
     beneficios:'&#x2705; Vitrine no Feed\n&#x2705; Catálogo de produtos\n&#x2705; Link de pedido direto\n&#x2705; 30 vagas'}
 };
 
-var _CUPONS_VALIDOS = ['FRILA14','INICIO14','BEM14','MASTER14','PARCEIRO14','EMPRESA14'];
 var _modalPagPlano = '';
 var _modalPagCadastro = null;
 
 // ── Verificar se plano está ativo ──────────────────
 function _planoAtivo(tipo) {
   try {
+    // Servidor ligado: só vale o que o servidor informou (assinatura, teste grátis ou benefício já concedido). O navegador não decide.
+    if (_assinaturaConfigurada()) return _acessoServidorPermite(tipo);
     var key = 'frilaone_assin_' + tipo;
     var dados = JSON.parse(localStorage.getItem(key) || 'null');
     if (!dados) return false;
@@ -12998,6 +12635,8 @@ var DIAS_CARENCIA_POS_VENCIMENTO = 3;
 // Status "de antes" (teste grátis / campanha), calculado no aparelho. Continua valendo quando não há assinatura confirmada pelo servidor.
 function _statusAssinaturaLegado(){
   try{
+    var svAc = _statusPeloAcessoServidor();
+    if(svAc) return svAc;
     var td = JSON.parse(localStorage.getItem('frilaone_trial')||'null');
     if(!td || !td.fim) return {existe:false, bloqueado:false};
     var fimEfetivo = _trialFimEfetivo(td.fim);
@@ -13066,6 +12705,9 @@ function _permitirAcaoPaga(){
 function _ativarPlano(tipo, trial) {
   var plano = _PLANOS[tipo];
   if (!plano) return;
+  // Trava: só o teste grátis pode ser registrado neste aparelho. Plano pago = somente o servidor.
+  if (!trial) { console.warn('[FrilaOne] ativação de plano pago local bloqueada'); return; }
+  if (_assinaturaConfigurada()) { try{ _acessoDoServidor(); }catch(eSrv){} return; }   // servidor ligado: nada é gravado no aparelho
   var dias = trial ? 14 : plano.dias;
   var dados = {
     tipo: tipo,
@@ -13099,8 +12741,6 @@ function _abrirModalPagamento(tipo, dadosCadastro) {
   _modalPagCadastro = dadosCadastro || null;
   var m = document.getElementById('modal-pagamento');
   document.getElementById('modal-pag-titulo').textContent = plano.nome;
-  document.getElementById('modal-pag-cupom-inp').value = '';
-  document.getElementById('modal-pag-cupom-msg').style.display = 'none';
   // Verificar se trial já está ativo
   var trialAtivo = false;
   try{
@@ -13113,14 +12753,12 @@ function _abrirModalPagamento(tipo, dadosCadastro) {
     document.getElementById('modal-pag-preco').style.color = 'var(--gr)';
     document.getElementById('modal-pag-btn-trial').textContent = '🎁 Ativar agora — grátis';
     document.getElementById('modal-pag-btn-trial').style.display = 'block';
-    document.getElementById('modal-pag-cupom-area').style.display = 'none';
   } else {
     document.getElementById('modal-pag-sub').textContent = 'Complete sua assinatura para ativar seu perfil';
     document.getElementById('modal-pag-preco').textContent = plano.preco;
     document.getElementById('modal-pag-preco').style.color = 'var(--pri)';
     document.getElementById('modal-pag-btn-trial').textContent = '🎁 Ativar Especial de Lançamento';
     document.getElementById('modal-pag-btn-trial').style.display = 'block';
-    document.getElementById('modal-pag-cupom-area').style.display = 'block';
   }
   document.getElementById('modal-pag-beneficios').innerHTML = plano.beneficios.replace(/\n/g,'<br>');
   if(m) m.style.display = 'flex';
@@ -13131,20 +12769,9 @@ function _fecharModalPag() {
   if(m) m.style.display = 'none';
 }
 
-function _aplicarCupomModal() {
-  var cod = (document.getElementById('modal-pag-cupom-inp').value || '').trim().toUpperCase();
-  var msg = document.getElementById('modal-pag-cupom-msg');
-  if (_CUPONS_VALIDOS.indexOf(cod) !== -1) {
-    if(msg) { msg.style.display='block'; msg.textContent='✅ Cupom válido! 30 dias grátis incluídos.'; }
-    document.getElementById('modal-pag-btn-trial').style.display='none';
-    document.getElementById('modal-pag-btn-pagar').textContent='🎁 Ativar 30 dias grátis';
-  } else {
-    if(msg) { msg.style.display='block'; msg.style.color='var(--rd)'; msg.textContent='❌ Cupom inválido.'; }
-  }
-}
 
 function _ativarTrialModal() {
-  // Trial automático — não precisa de cupom, já é garantido para todos
+  // Trial automático — já é garantido para todos
   var trialExistente = null;
   try{ trialExistente = JSON.parse(localStorage.getItem('frilaone_trial')||'null'); }catch(e){}
   if(!trialExistente || !trialExistente.ativo || Date.now() >= trialExistente.fim){
@@ -13153,7 +12780,7 @@ function _ativarTrialModal() {
   }
   _ativarPlano(_modalPagPlano, true);
   _fecharModalPag();
-  showToast('🎉 30 dias grátis ativados!','ok');
+  showToast(_assinaturaConfigurada() ? '🎁 Teste grátis confirmado' : '🎉 30 dias grátis ativados!','ok');
   if (_modalPagCadastro) { _finalizarCadastroAposPagamento(_modalPagCadastro); }
   // Atualizar botões na tela
   _atualizarBotoesTrial();
@@ -13162,12 +12789,12 @@ function _ativarTrialModal() {
 function _confirmarPagamentoModal() {
   var plano = _PLANOS[_modalPagPlano];
   if (!plano) return;
-  // Simular ativação (em produção: webhook do Mercado Pago confirma)
-  _ativarPlano(_modalPagPlano, false);
+  // Plano pago NUNCA é ativado neste aparelho: o acesso pago só vale quando o servidor confirma a
+  // assinatura (assinaturas/{uid}, gravada após o Mercado Pago). Aqui só se leva a pessoa ao cartão.
   _fecharModalPag();
   if (_modalPagCadastro) { _finalizarCadastroAposPagamento(_modalPagCadastro); }
-  // Redirecionar para pagamento real
-  setTimeout(function() { window.open(plano.link, '_blank'); }, 1500);
+  if (_assinaturaConfigurada()) { setTimeout(function(){ try{ abrirMinhaAssinatura(); }catch(e){} }, 300); }
+  else { showToast('O cadastro do cartão será liberado em breve','warn'); }
 }
 
 // Atualiza todos os botões de ativar conforme estado do trial
@@ -13368,9 +12995,9 @@ document.addEventListener('DOMContentLoaded', function() {
 var _notifs = [
   {icon:'&#x1F4AC;', titulo:'Chat interno', msg:'Você tem mensagens não lidas no chat.', tempo:'14:22', data:'Hoje', lida:false, cat:'geral', cor:'var(--gr)'},
   {icon:'&#x26A1;', titulo:'Nova vaga urgente', msg:'Motorista de Van · Sete Lagoas — publicada agora.', tempo:'13:55', data:'Hoje', lida:false, cat:'geral', cor:'var(--rd)'},
-  {icon:'&#x1F465;', titulo:'Convite ativado!', msg:'Maria usou seu código e ganhou 30 dias grátis. Faltam 4 de 7 pra você virar Prata.', tempo:'12:19', data:'Hoje', lida:false, cat:'convites', cor:'var(--pri)'},
+  {icon:'&#x1F465;', titulo:'Convite ativado!', msg:'Maria entrou pelo seu convite. Faltam 4 de 7 pra você virar Prata.', tempo:'12:19', data:'Hoje', lida:false, cat:'convites', cor:'var(--pri)'},
   {icon:'&#x1F3C6;', titulo:'Você subiu de nível!', msg:'Parabéns! Você alcançou o nível Prata.', tempo:'09:40', data:'Hoje', lida:true, cat:'geral', cor:'var(--yl)'},
-  {icon:'&#x23F3;', titulo:'Convite expirando', msg:'O convite que você enviou pro Carlos expira em 6 horas. Lembre ele de ativar!', tempo:'18:30', data:'Ontem', lida:true, cat:'convites', cor:'var(--pri)'},
+  {icon:'&#x23F3;', titulo:'Convite expirando', msg:'O Carlos ainda não abriu o convite que você enviou. Lembre ele de entrar!', tempo:'18:30', data:'Ontem', lida:true, cat:'convites', cor:'var(--pri)'},
   {icon:'🔔', titulo:'Assinatura', msg:'Seu plano expira em 5 dias. Renove agora.', tempo:'10:05', data:'Ontem', lida:true, cat:'geral', cor:'var(--pri)'},
 ];
 var _notifFiltroAtual = 'todas';
@@ -13791,18 +13418,32 @@ function _mostrarUpsellPrestador(outroUid, outroNome, convId){
 }
 
 function _pagarAssinaturaPrestador(){
-  window.open(_PLANOS.parceiro.link, '_blank');
+  if (_assinaturaConfigurada()) { try{ closeSheet(); }catch(e){} try{ abrirMinhaAssinatura(); }catch(e){} }
+  else { showToast('O cadastro do cartão será liberado em breve','warn'); }
 }
 
 function _jaAssineiPrestador(outroUid, outroNome, convId){
   closeSheet();
-  if(_planoAtivo('parceiro')){
-    _abrirConversaReal(convId, outroUid, outroNome);
-  } else {
-    _ativarPlano('parceiro', false);
-    showToast('Assinatura ativada! ✅');
-    setTimeout(function(){ _abrirConversaReal(convId, outroUid, outroNome); }, 400);
+  // Não ativa plano neste aparelho: só vale o que o servidor confirmar (assinaturas/{uid}, gravado após o Mercado Pago).
+  if(!_assinaturaConfigurada()){
+    showToast('A confirmação da assinatura será liberada em breve','warn');
+    return;
   }
+  showToast('Conferindo sua assinatura…');
+  _sincronizarAssinatura().then(function(r){
+    var st = r && r.status;
+    if(st === 'authorized'){
+      showToast('Assinatura confirmada! ✅','ok');
+      setTimeout(function(){ _abrirConversaReal(convId, outroUid, outroNome); }, 400);
+    } else {
+      // pagamento ainda pendente (ou sem assinatura): avisa e deixa tentar de novo
+      showToast('Ainda não recebemos a confirmação do pagamento. Tente de novo em instantes.','warn');
+      setTimeout(function(){ _mostrarUpsellPrestador(outroUid, outroNome, convId); }, 400);
+    }
+  }).catch(function(){
+    showToast('Não foi possível conferir agora. Tente de novo.','err');
+    setTimeout(function(){ _mostrarUpsellPrestador(outroUid, outroNome, convId); }, 400);
+  });
 }
 
 // Foto da outra pessoa no cabeçalho do chat: usa a que já veio do perfil; se não veio, procura na conversa
@@ -14482,6 +14123,30 @@ function _scoreRenderUI() {
 // ──────────────────────────────────────────────────────────────
 
 // ── DADOS DE SEGURANÇA: CPF + contato de emergência ──
+// ── DADOS PRIVADOS (CPF e contato de emergência) ──────────────────────────
+// Ficam em documentos que só o dono lê: usuarios_privado/{uid} e negocios_privado/{negId}.
+// (Antes ficavam em usuarios/negocios, legíveis por qualquer pessoa logada.)
+function _privDb(){ try{ return window._fbDb || (typeof _fbDb !== 'undefined' ? _fbDb : (window.firebase ? firebase.firestore() : null)); }catch(e){ return null; } }
+function _privSalvarUsuario(uid, campos){
+  try{
+    var db = _privDb(); if(!db || !uid) return Promise.resolve();
+    var c = {}; var k; for(k in campos) c[k] = campos[k];
+    c.atualizadoEm = Date.now();
+    return db.collection('usuarios_privado').doc(uid).set(c, {merge:true}).catch(function(e){ console.warn('[FrilaOne] dados privados não salvos', e && e.code); });
+  }catch(e){ return Promise.resolve(); }
+}
+function _privSalvarLoja(negId, uid, cpf){
+  try{
+    var db = _privDb(); if(!db || !negId || !uid || !cpf) return Promise.resolve();
+    return db.collection('negocios_privado').doc(negId).set({uid:uid, cpf:cpf, atualizadoEm:Date.now()}, {merge:true}).catch(function(e){ console.warn('[FrilaOne] CPF da loja não salvo', e && e.code); });
+  }catch(e){ return Promise.resolve(); }
+}
+// Cópia da loja sem o CPF (o documento público da loja nunca leva CPF)
+// v4.3: o app nunca envia campos de aprovação (decididos só pelo servidor) nem o CPF (vai para negocios_privado)
+function _negSemCpf(o){ var srv = ['publicaAte','aprovacaoEm','aprovacaoPor','aprovacaoMotivo','aprovacaoStatus']; var c = {}; var k; for(k in (o||{})){ if(k !== 'cpf' && srv.indexOf(k) === -1) c[k] = o[k]; } return c; }
+// Status que o app pode informar ao salvar: 'pendente' ao cadastrar (loja nova) ou ao reenviar depois de pendência/recusa.
+// Loja já pendente ou aprovada: não manda nada (o servidor é quem decide; as regras recusam qualquer mudança indevida).
+function _statusLojaParaEnviar(statusAtual){ return (!statusAtual || statusAtual === 'pendencia' || statusAtual === 'recusada') ? 'pendente' : null; }
 function _validarCPF(cpf){
   cpf = (cpf||'').replace(/\D/g,'');
   if(cpf.length!==11 || /^(\d)\1{10}$/.test(cpf)) return false;
@@ -14575,7 +14240,13 @@ function _salvarVerificacaoSeguranca(){
     var db = window._fbDb || (typeof _fbDb !== 'undefined' ? _fbDb : (typeof firebase!=='undefined' ? firebase.firestore() : null));
     if(meuUid && db){
       db.collection('verificacoes').doc(meuUid).set(dados, { merge: true }).catch(function(){});
-      db.collection('usuarios').doc(meuUid).set({ verificado: true }, { merge: true }).catch(function(){});
+      if(_assinaturaConfigurada()){
+        // o selo só é ligado pelo servidor, depois de conferir os dados enviados
+        db.collection('verificacoes').doc(meuUid).set(dados, { merge: true }).then(function(){ return _fnPost('confirmarVerificacao', {}); })
+          .catch(function(){ try{ showToast('Não foi possível confirmar o selo agora. Abra a verificação de novo mais tarde.','warn'); }catch(eT){} });
+      }
+      // v18: sem o servidor ligado NÃO se grava "verificado" na conta (as regras bloqueiam). Os dados ficam em verificacoes/{uid}
+      // e neste aparelho; o selo público só aparece quando a função confirmarVerificacao (Modo Servidor) o liga.
     }
   }catch(e){}
   showToast('✅ Verificação concluída!');
@@ -14607,7 +14278,7 @@ function _salvarDadosSeguranca(){
   localStorage.setItem('frilaone_contato_emergencia', (contInp.value||'').replace(/\D/g,''));
   try{
     var uid = window._fbUID;
-    if(uid && window._fb) window._fb.salvarPerfil(uid, { cpf: cpf, contatoEmergencia: (contInp.value||'').replace(/\D/g,'') }).catch(function(){});
+    if(uid) _privSalvarUsuario(uid, { cpf: cpf, contatoEmergencia: (contInp.value||'').replace(/\D/g,'') });
   }catch(ex){}
   showToast('Dados de segurança salvos ✅');
 }
@@ -14723,13 +14394,7 @@ function scorePainelPanico() {
           }).catch(function(){});
         }
       }catch(ex){ console.error('scorePainelPanico erro ao gravar:', ex); }
-      if(uid&&window._fbReady&&window._fb){
-        window._fb.atualizarPerfil(uid,{
-          ultima_emergencia_tipo:'panico',
-          ultima_emergencia_ts:Date.now(),
-          ultima_emergencia_coords:coords||null
-        }).catch(function(){});
-      }
+      // (a localização do pânico fica só em emergencias; não é mais copiada para usuarios, que outros usuários leem)
       if(contatoPanico){
         var linkMapa = coords ? ('https://maps.google.com/?q='+coords) : 'localização não disponível';
         var msg = '🚨 EMERGÊNCIA — '+nomePanico+' acionou o botão de pânico no FrilaOne agora. Localização: '+linkMapa;
@@ -14904,8 +14569,8 @@ function _ativarLojaAutoOnline(){
     // Se a pessoa JÁ está "Tô disponível" de verdade (Prestador/Acadêmico), a presença dela
     // já existe (e já serve pra loja aparecer aberta) — não sobrescreve.
     if(typeof disponivel !== 'undefined' && disponivel){ return; }
-    window._lojaAutoOnlineAtiva = true;
-    _iniciarHeartbeatPresenca(uidNegAuto, 'negocio');
+    // v4.3: a loja só abre quando está PUBLICADA (aprovada pelo administrador e dentro do prazo). Enquanto isso as regras recusam a
+    // gravação; o heartbeat só começa DEPOIS de a primeira gravação dar certo (senão criaria uma presença sem categoria).
     firebase.firestore().collection('disponiveis').doc(uidNegAuto).set({
       nome: (localStorage.getItem('frilaone_nome')||'Usuário'),
       foto: (localStorage.getItem('frilaone_foto')||''),
@@ -14913,6 +14578,8 @@ function _ativarLojaAutoOnline(){
       categoria: 'negocio',
       ts: firebase.firestore.FieldValue.serverTimestamp()
     }, { merge: true }).then(function(){
+      window._lojaAutoOnlineAtiva = true;
+      _iniciarHeartbeatPresenca(uidNegAuto, 'negocio');
       var sub = document.getElementById('card-disp-sub');
       var tipoSubLoja = localStorage.getItem('frilaone_tipo')||'';
       // Prestador/Acadêmico mantêm o texto do próprio "Tô disponível" — a frase da loja confundia
@@ -15246,39 +14913,6 @@ document.addEventListener('DOMContentLoaded', function() {
 <script>
 
 // ── SELETOR DE PLANO DE VAGA ─────────────────────
-var _planoVagaSelecionado = null;
-function _selecionarPlanoVaga(plano){
-  _planoVagaSelecionado = plano;
-  ['gratis','essencial','premium'].forEach(function(p){
-    var el = document.getElementById('plano-vaga-'+p);
-    if(!el) return;
-    if(p === plano){
-      el.style.borderColor = '#E8590C';
-      el.style.background  = p==='premium' ? 'rgba(232,89,12,0.12)' : 'rgba(232,89,12,0.07)';
-    } else {
-      el.style.borderColor = p==='premium' ? 'rgba(232,89,12,0.3)' : 'var(--bd)';
-      el.style.background  = p==='premium' ? 'rgba(232,89,12,0.06)' : 'var(--dk3)';
-    }
-  });
-  var av = document.getElementById('plano-vaga-aviso');
-  if(av) av.style.display='none';
-}
-function _confirmarPlanoVaga(){
-  if(!_planoVagaSelecionado){
-    var av=document.getElementById('plano-vaga-aviso');
-    if(av){av.style.display='block';av.textContent='⚠️ Selecione um plano para continuar';}
-    return;
-  }
-  if(_planoVagaSelecionado==='gratis'){
-    pubVagaFlow();
-  } else if(_planoVagaSelecionado==='essencial'){
-    window.open('https://mpago.la/22Mdt2J','_blank');
-    showToast('✅ Abrindo pagamento Essencial R$19,90');
-  } else if(_planoVagaSelecionado==='premium'){
-    window.open('https://mpago.la/1ciM5JS','_blank');
-    showToast('✅ Abrindo pagamento Premium R$24,90');
-  }
-}
 
 // Renderiza estrelas estilo Uber/iFood: fundo cinza + camada laranja recortada pela % da média
 function _renderEstrelasLoja(soma, count){
@@ -15863,10 +15497,10 @@ function _carregarNegociosDrawer(){
     if(_negociosDrawerListener) return;
     var db = window._fbDb || (typeof _fbDb !== 'undefined' ? _fbDb : firebase.firestore());
     var meuUid = _meuUid();
-    _negociosDrawerListener = db.collection('negocios').where('ativo','==',true).limit(30)
+    _negociosDrawerListener = db.collection('negocios').where('publicaAte','>',Date.now()).limit(30)
       .onSnapshot(function(snap){
         var negocios = [];
-        snap.forEach(function(doc){ var d = doc.data(); d._id = doc.id; negocios.push(d); });
+        snap.forEach(function(doc){ var d = doc.data(); d._id = doc.id; if(d.ativo !== false) negocios.push(d); });   // v4.3: só lojas PUBLICADAS (aprovadas e no prazo)
         // Ranking por nota média (maior primeiro); sem avaliação ainda fica no fim, por ordem de cadastro
         negocios.sort(function(a,b){
           var ma = (a.avaliacaoCount ? (a.avaliacaoSoma/a.avaliacaoCount) : -1);
@@ -15992,7 +15626,9 @@ function _abrirEdicaoNegocio(negId){
       setVal('neg-cad-desc', n.desc);
       // Documento (CNPJ/CPF) já informado no cadastro — sem isso o campo vinha vazio e
       // salvar a edição falhava com "CNPJ inválido" até a pessoa digitar tudo de novo.
-      if(n.documentoTipo === 'cpf' && n.cpf){ _negDocTab('cpf'); setVal('neg-cad-cpf-doc', n.cpf); }
+      var cpfLojaEd = n.cpf || '';
+      if(!cpfLojaEd){ try{ var nlEd = JSON.parse(localStorage.getItem('frilaone_meu_negocio')||'{}'); if(localStorage.getItem('frilaone_meu_negocio_id') === negId) cpfLojaEd = nlEd.cpf || ''; }catch(e6){} }
+      if(n.documentoTipo === 'cpf' && cpfLojaEd){ _negDocTab('cpf'); setVal('neg-cad-cpf-doc', cpfLojaEd); }
       else if(n.cnpj){ _negDocTab('cnpj'); setVal('neg-cad-cnpj', n.cnpj); }
       var listaProd = document.getElementById('neg-cad-produtos-lista');
       if(listaProd) listaProd.innerHTML = '';
@@ -16788,14 +16424,8 @@ function _bloquearApp(){
   try{
     var params = new URLSearchParams(window.location.search);
 
-    // ── Convite via link (ex: ?convite=CV-00123) ──────────────────────────
-    var convite = params.get('convite');
-    if(convite){
-      // Salva para preencher automaticamente no cadastro
-      localStorage.setItem('frilaone_convite_url', convite.toUpperCase());
-      // Limpar da URL sem recarregar
-      window.history.replaceState({}, document.title, window.location.pathname);
-    }
+    // Parâmetro antigo ?convite= ignorado (sistema de códigos retirado); só descarta da barra de endereço
+    if(params.get('convite')){ window.history.replaceState({}, document.title, window.location.pathname); }
 
     // ── Indicação da campanha do Kit FrilaOne (ex: ?ref=<uid de quem convidou>) ──
     // Fica guardada até a pessoa criar a conta; a indicação em si só é gravada
@@ -16810,14 +16440,12 @@ function _bloquearApp(){
     var plano  = params.get('plano') || params.get('external_reference') || 'essencial';
     if(!status) return;
     if(status === 'approved' || status === 'success'){
-      var fim = Date.now() + (30*24*60*60*1000);
-      var planoKey = 'frilaone_plano_' + plano;
-      localStorage.setItem(planoKey, JSON.stringify({plano:plano, fim:fim, ativado:Date.now()}));
-      localStorage.removeItem('frilaone_trial');
+      // Endereço com ?payment=approved NÃO ativa nada (qualquer pessoa poderia digitar). O plano só vale
+      // quando o servidor confirma o pagamento; aqui só se pede a conferência.
       window.history.replaceState({}, document.title, window.location.pathname);
       setTimeout(function(){
-        showToast('🎉 Plano ativado! Aproveite o FrilaOne','ok');
-        try{ _atualizarTrialBadge(); }catch(e){}
+        showToast('Conferindo seu pagamento…','ok');
+        try{ if(_assinaturaConfigurada()){ _sincronizarAssinatura().then(function(){ _acessoDoServidor(); }).catch(function(){}); } }catch(e){}
       }, 1000);
     } else if(status === 'pending'){
       showToast('⏳ Processando: plano ativa ao confirmar','warn');
@@ -16826,26 +16454,6 @@ function _bloquearApp(){
     }
   }catch(e){}
 })();
-
-// ── Preencher campo de código se veio por link de convite ─────────────────
-document.addEventListener('DOMContentLoaded', function(){
-  setTimeout(function(){
-    var conviteUrl = localStorage.getItem('frilaone_convite_url');
-    if(!conviteUrl) return;
-    var inp = document.getElementById('inp-codigo-cad');
-    if(inp && !inp.value){
-      inp.value = conviteUrl;
-      inp.style.borderColor = 'var(--gr)';
-      // Mostrar mensagem de código já preenchido
-      var msg = document.getElementById('codigo-cad-msg');
-      if(msg){
-        msg.style.display='block';
-        msg.style.color='var(--gr)';
-        msg.textContent='🎁 Código de convite detectado: ' + conviteUrl + ' — 30 dias grátis!';
-      }
-    }
-  }, 1200);
-});
 
 // ── Rodar ao carregar ─────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', function(){
@@ -17380,6 +16988,8 @@ function _carregarAssinaturaServidor(){
     if(_assinaturaListener){ try{ _assinaturaListener(); }catch(e){} _assinaturaListener = null; }
     _assinaturaListener = firebase.firestore().collection('assinaturas').doc(uid).onSnapshot(function(snap){
       window._assinaturaServidor = snap.exists ? snap.data() : null;
+      // a assinatura mudou (ex.: webhook confirmou o pagamento): pede o acesso atualizado ao servidor
+      try{ clearTimeout(window._acessoDebounce); window._acessoDebounce = setTimeout(function(){ _acessoDoServidor(); }, 1500); }catch(eAc){}
       try{
         if(window._assinaturaServidor && window._assinaturaServidor.status === 'authorized') localStorage.removeItem('frilaone_aguardando_cartao');
       }catch(e){}
@@ -17563,6 +17173,58 @@ function _sincronizarSePreciso(){
   _sincronizarAssinatura().catch(function(){});
 }
 
+
+// ── ACESSO PAGO DECIDIDO PELO SERVIDOR ─────────────────────────────────────
+// Com _ASSINATURA_ATIVA ligado, quem diz se a pessoa tem acesso (teste grátis, benefício já concedido, assinatura) é o servidor
+// (statusAcesso / definirModoMaster / confirmarVerificacao). O app só mostra; o que fica
+// no aparelho é apenas uma cópia para a tela. Pessoa Física continua grátis e sem plano.
+window._acessoSrv = null;
+function _acessoDoServidor(){
+  if(!_assinaturaConfigurada()) return Promise.resolve(null);
+  return _fnPost('statusAcesso', {}).then(function(r){ _aplicarAcessoServidor(r && r.acesso); return r && r.acesso; }).catch(function(){ return null; });
+}
+function _aplicarAcessoServidor(ac){
+  if(!ac) return;
+  window._acessoSrv = ac;
+  try{
+    var fim = Math.max(ac.trialFim || 0, ac.codigoFim || 0);
+    if(fim > 0) localStorage.setItem('frilaone_trial', JSON.stringify({cod:'SERVIDOR', inicio:ac.trialInicio || Date.now(), fim:fim, ativo:fim > Date.now()}));
+    else localStorage.removeItem('frilaone_trial');
+    _atualizarTrialBadge();
+  }catch(e){}
+}
+function _acessoServidorPermite(tipo){
+  var ac = window._acessoSrv;
+  if(!ac || !ac.temAcesso) return false;
+  if(ac.plano === 'todos') return true;
+  if(ac.plano === 'master') return tipo !== 'vit';
+  if(ac.plano === 'golden') return tipo === 'parceiro' || tipo === 'prestador' || tipo === 'empresa';
+  if(ac.plano === 'diamond') return tipo === 'vit';
+  return false;
+}
+// Estado no formato antigo (existe/bloqueado/vencido/dias...) para as telas que já existiam
+function _statusPeloAcessoServidor(){
+  var ac = window._acessoSrv;
+  if(!_assinaturaConfigurada() || !ac) return null;
+  if(!_planoDaConta()) return {existe:false, bloqueado:false};   // Pessoa Física: grátis, nunca bloqueada
+  var agora = Date.now(), DIA = 86400000;
+  if(ac.temAcesso) return {existe:true, bloqueado:false, vencido:false, diasRestam:Math.max(0, Math.ceil(((ac.ate || (agora + 9999*DIA)) - agora) / DIA))};
+  if(ac.emCarencia) return {existe:true, bloqueado:false, vencido:true, diasVencido:0, diasCarenciaRestam:Math.max(0, Math.ceil((ac.carenciaAte - agora) / DIA))};
+  if(!ac.trialFim && !ac.codigoFim) return {existe:false, bloqueado:false};
+  return {existe:true, bloqueado:true, vencido:true, diasVencido:99, diasCarenciaRestam:0};
+}
+function _definirModoMasterServidor(ativo){
+  return _fnPost('definirModoMaster', {ativo:!!ativo}).then(function(){ return true; }).catch(function(){ return false; });
+}
+
+// Único caminho de contratação: assinatura confirmada pelo servidor (cartão). Os links antigos do Mercado Pago foram retirados.
+// Servidor ainda desligado (_ASSINATURA_ATIVA=false): avisa que o pagamento por cartão chega em breve (não abre nenhum link).
+function _abrirPagamentoOficial(){
+  try{ closeSheet(); }catch(e){}
+  if(_assinaturaConfigurada()){ try{ abrirMinhaAssinatura(); }catch(e){} return; }
+  showToast('A assinatura por cartão será liberada em breve.','warn');
+}
+
 // ── Cadastrar / trocar cartão ───────────────────────────────
 function _textoPrimeiraCobranca(e){
   if(e.codigo === 'campanha' || e.codigo === 'cartao_ok') return 'A primeira cobrança será em <b style="color:#fff">01/12/2026</b> ('+e.valor+' por mês).';
@@ -17605,7 +17267,7 @@ function _enviarCartaoAssinatura(){
   if(!_assinaturaConfigurada() && _previaAtiva()){ closeSheet(); showToast('👀 Prévia: aqui abriria o Mercado Pago para cadastrar o cartão'); return; }
   var btn = document.getElementById('ass-btn-continuar');
   if(btn){ btn.disabled = true; btn.textContent = 'Abrindo o Mercado Pago…'; }
-  _fnPost('criarAssinatura', {emailMP:em, trocar:!!window._cartaoTrocar}).then(function(r){
+  _fnPost('criarAssinatura', {emailMP:em, trocar:!!window._cartaoTrocar, plano:(_planoParaCartao() === 'master' ? 'master' : '')}).then(function(r){
     if(!r || !r.url) throw {codigo:'sem_url'};
     try{ localStorage.setItem('frilaone_aguardando_cartao', String(Date.now())); }catch(e){}
     closeSheet();
